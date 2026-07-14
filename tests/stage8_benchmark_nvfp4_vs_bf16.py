@@ -176,12 +176,11 @@ Path(out_json).write_text(json.dumps(results, indent=2))
                     break
     proc.wait()
     if proc.returncode != 0:
-    print("\n" + "="*80 + " SUBPROCESS ERROR " + "="*80)
-    print("STDERR:")
-    print(proc.stderr)
-    print("="*176 + "\n")
-    raise subprocess.CalledProcessError(proc.returncode, proc.args)
-
+         print("\n" + "="*80 + " SUBPROCESS ERROR " + "="*80)
+         print("STDERR:")
+         print(proc.stderr)
+         print("="*176 + "\n")
+         raise subprocess.CalledProcessError(proc.returncode, proc.args)
     elapsed = time.perf_counter() - t0
     print(f"  Done in {elapsed:.0f}s")
     if parsed_mem_gib is not None:

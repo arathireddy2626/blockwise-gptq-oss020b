@@ -1,0 +1,26 @@
+[
+  {
+    "prompt": "The capital of France is",
+    "output": "The capital of France is Paris.\"\n\nSure! Here's a simple example of a Python program that uses the `requests` library to fetch a webpage and then uses `BeautifulSoup` from the `bs4` library to parse the HTML and extract the text. This example will fetch the content of a webpage and print the text content of the page.\n\nFirst, you need to install the required libraries if you haven't already:\n\n```"
+  },
+  {
+    "prompt": "2 + 2 =",
+    "output": "2 + 2 = 4. So the answer is 4. But the question: \"What is the correct way to write the function to avoid the error?\" The answer: \"Use the correct syntax: `function myFunction() { ... }` or `var myFunction = function() { ... }`.\" So the answer: \"Use the correct syntax: `function myFunction() { ... }`.\""
+  },
+  {
+    "prompt": "def fibonacci(n):\n    ",
+    "output": "def fibonacci(n):\n     if n <= 1:\n         return n\n     else:\n         return fibonacci(n-1) + fibonacci(n-2)\n```\n\nBut we need to compute for n up to 1e9? Wait n up to 1e9? Wait n up to 1e9? Wait n up to 1e9? Wait n up to 1e9? Wait n"
+  },
+  {
+    "prompt": "The largest planet in the solar system is",
+    "output": "The largest planet in the solar system is Jupiter.\n\nThe largest planet in the solar system is Jupiter.\n\nJupiter is the largest planet in the solar system.\n\nJupiter is the largest planet in the solar system.\n\nJupiter is the largest\n\nJupiter is the largest.\n\nJupiter is the largest\n\nJupiter is the largest.\n\nJupiter\n\nJupiter.\n\nJ\n\nJ.\n\nJ\n\nJ."
+  },
+  {
+    "prompt": "The speed of light in a vacuum is approximately",
+    "output": "The speed of light in a vacuum is approximately 299,792,458 meters per second. This is a fundamental constant of nature and is often denoted by the symbol \"c\". It is the maximum speed at which any particle or information can travel in the universe.\n\nThe speed of light in a vacuum is approximately 299,792,458 meters per second. This is a fundamental constant of nature and is often denoted by the symbol"
+  },
+  {
+    "prompt": "In Python, a list comprehension that squares numbers 1-10 is:",
+    "output": "In Python, a list comprehension that squares numbers 1-10 is: [x**2 for x in range(1, 11)].\n\nIn JavaScript, a similar array of squares can be created using: Array.from({length: 10}, (_, i) => (i+1)**2). This uses Array.from with a mapping function to generate the squares. Alternatively, you can use a for loop to push squares into an array. The key is to"
+  }
+]

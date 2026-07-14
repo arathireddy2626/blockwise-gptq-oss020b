@@ -176,7 +176,7 @@ def patch_expert_forward(
     def _patched_forward(hidden_states, router_indices=None, routing_weights=None):
         batch_size = hidden_states.shape[0]
         flat       = hidden_states.reshape(-1, experts.hidden_size)
-        num_exp    = experts.gate_up_proj.shape[0]
+        num_exp    = routing_weights.shape[1]
 
         next_states = torch.zeros_like(flat)
 
@@ -191,7 +191,7 @@ def patch_expert_forward(
                 continue
 
             with torch.no_grad():
-                top_k_pos, token_idx = torch.where(mask[e])
+                _, token_idx = torch.where(mask[e])
 
             current_state = flat[token_idx]        # [T_e, hidden]
 
@@ -214,7 +214,7 @@ def patch_expert_forward(
 
             # ── forward: down projection ──────────────────────────────────
             out      = gated_output @ experts.down_proj[e] + experts.down_proj_bias[e]
-            weighted = out * routing_weights[token_idx, top_k_pos, None]
+            weighted = out * routing_weights[token_idx, e, None]
             next_states.index_add_(0, token_idx, weighted.to(flat.dtype))
 
         return next_states.view(batch_size, -1, experts.hidden_size)

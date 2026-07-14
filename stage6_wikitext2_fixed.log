@@ -1,0 +1,84 @@
+nohup: ignoring input
+====================================================================
+Stage 6 — NVFP4 Perplexity Evaluation  [gpt-oss-20b-BF16-NVFP4-wikitext2-fixed]
+====================================================================
+Quantized model    : models/gpt-oss-20b-BF16-NVFP4-wikitext2-fixed
+BF16 stem          : gpt-oss-20b-BF16-NVFP4-wikitext2-fixed
+Baseline           : results/stage4_gpt-oss-20b-BF16_baseline.json
+WikiText-2 samples : results/stage4_gpt-oss-20b-BF16_wikitext2_samples.json
+C4 samples         : results/stage4_gpt-oss-20b-BF16_c4_samples.json
+Seq len            : 2048
+C4 tokens          : 131,072
+Skip WikiText-2    : False
+Output             : results/stage6_gpt-oss-20b-BF16-NVFP4-wikitext2-fixed_eval.json
+
+Baseline (Stage 4 BF16 — gpt-oss-20b-BF16-NVFP4-wikitext2-fixed):
+  WikiText-2 ppl : 226.7927
+  C4         ppl : 708.9354
+
+Loading cached WikiText-2 samples...
+  Loaded 4358 samples
+
+Loading cached C4 samples...
+  Loaded 1024 samples
+/workspace/blockwise-gptq-main/.venv/lib/python3.12/site-packages/huggingface_hub/constants.py:298: FutureWarning: The `HF_HUB_ENABLE_HF_TRANSFER` environment variable is deprecated as 'hf_transfer' is not used anymore. Please use `HF_XET_HIGH_PERFORMANCE` instead to enable high performance transfer with Xet. Visit https://huggingface.co/docs/huggingface_hub/package_reference/environment_variables#hfxethighperformance for more details.
+  warnings.warn(
+
+Loading tokenizer...
+  Vocab size   : 199,998
+  BOS token ID : 199998
+
+Loading quantized model 'gpt-oss-20b-BF16-NVFP4-wikitext2-fixed' (device_map=auto)...
+Loading weights:   0%|          | 0/411 [00:00<?, ?it/s]Loading weights:   0%|          | 2/411 [00:00<00:40, 10.07it/s]Loading weights:   1%|▏         | 6/411 [00:00<00:23, 17.47it/s]Loading weights:   4%|▎         | 15/411 [00:00<00:11, 33.53it/s]Loading weights:  10%|▉         | 40/411 [00:00<00:04, 78.37it/s]Loading weights:  13%|█▎        | 55/411 [00:00<00:04, 80.34it/s]Loading weights:  16%|█▋        | 67/411 [00:01<00:04, 77.59it/s]Loading weights:  22%|██▏       | 91/411 [00:01<00:03, 97.38it/s]Loading weights:  26%|██▋       | 108/411 [00:01<00:03, 95.29it/s]Loading weights:  30%|███       | 125/411 [00:01<00:03, 93.72it/s]Loading weights:  35%|███▍      | 142/411 [00:01<00:02, 94.24it/s]Loading weights:  39%|███▊      | 159/411 [00:01<00:02, 94.79it/s]Loading weights:  42%|████▏     | 174/411 [00:02<00:02, 91.68it/s]Loading weights:  47%|████▋     | 193/411 [00:02<00:02, 99.32it/s]Loading weights:  51%|█████     | 210/411 [00:02<00:02, 99.82it/s]Loading weights:  55%|█████▌    | 227/411 [00:02<00:01, 96.78it/s]Loading weights:  59%|█████▉    | 244/411 [00:02<00:01, 96.95it/s]Loading weights:  63%|██████▎   | 259/411 [00:03<00:01, 91.38it/s]Loading weights:  65%|██████▌   | 269/411 [00:03<00:01, 82.45it/s]Loading weights:  71%|███████   | 290/411 [00:03<00:01, 96.60it/s]Loading weights:  76%|███████▌  | 312/411 [00:03<00:00, 109.91it/s]Loading weights:  80%|████████  | 329/411 [00:03<00:00, 107.90it/s]Loading weights:  84%|████████▎ | 344/411 [00:03<00:00, 104.36it/s]Loading weights:  88%|████████▊ | 363/411 [00:03<00:00, 107.46it/s]Loading weights:  92%|█████████▏| 379/411 [00:04<00:00, 102.54it/s]Loading weights:  96%|█████████▌| 394/411 [00:04<00:00, 94.35it/s] Loading weights: 100%|██████████| 411/411 [00:04<00:00, 94.55it/s]
+  Parameters : 20.91 B
+  Load time  : 6.4 s
+  GPU memory : 39.0 GB allocated
+
+────────────────────────────────────────────────────────────────────
+WikiText-2 (4358 cached samples, non-overlapping windows)
+────────────────────────────────────────────────────────────────────
+  wikitext2  window   10/140  (  7.1%)  tokens=  20,480  ppl= 158.096  [   3.3s]
+  wikitext2  window   20/140  ( 14.3%)  tokens=  40,960  ppl= 180.536  [   6.1s]
+  wikitext2  window   30/140  ( 21.4%)  tokens=  61,440  ppl= 190.543  [   8.8s]
+  wikitext2  window   40/140  ( 28.6%)  tokens=  81,920  ppl= 177.275  [  11.5s]
+  wikitext2  window   50/140  ( 35.7%)  tokens= 102,400  ppl= 192.218  [  14.2s]
+  wikitext2  window   60/140  ( 42.9%)  tokens= 122,880  ppl= 180.255  [  16.8s]
+  wikitext2  window   70/140  ( 50.0%)  tokens= 143,360  ppl= 191.162  [  19.5s]
+  wikitext2  window   80/140  ( 57.1%)  tokens= 163,840  ppl= 188.077  [  22.1s]
+  wikitext2  window   90/140  ( 64.3%)  tokens= 184,320  ppl= 196.944  [  24.8s]
+  wikitext2  window  100/140  ( 71.4%)  tokens= 204,800  ppl= 207.446  [  27.4s]
+  wikitext2  window  110/140  ( 78.6%)  tokens= 225,280  ppl= 211.021  [  30.1s]
+  wikitext2  window  120/140  ( 85.7%)  tokens= 245,760  ppl= 213.653  [  32.7s]
+  wikitext2  window  130/140  ( 92.9%)  tokens= 266,240  ppl= 213.071  [  35.3s]
+  wikitext2  window  140/140  (100.0%)  tokens= 286,720  ppl= 220.293  [  38.0s]
+
+  NVFP4 ppl : 220.2932
+  BF16  ppl : 226.7927
+  Δppl      : -6.4995  (OK)
+
+────────────────────────────────────────────────────────────────────
+C4 (1024 cached samples, up to 131,072 tokens)
+────────────────────────────────────────────────────────────────────
+  c4           window   10/64  ( 15.6%)  tokens=  20,480  ppl= 851.035  [   2.6s]
+  c4           window   20/64  ( 31.2%)  tokens=  40,960  ppl= 706.197  [   5.3s]
+  c4           window   30/64  ( 46.9%)  tokens=  61,440  ppl= 634.252  [   7.9s]
+  c4           window   40/64  ( 62.5%)  tokens=  81,920  ppl= 673.446  [  10.6s]
+  c4           window   50/64  ( 78.1%)  tokens= 102,400  ppl= 583.556  [  13.2s]
+  c4           window   60/64  ( 93.8%)  tokens= 122,880  ppl= 577.788  [  15.8s]
+  c4           window   64/64  (100.0%)  tokens= 131,072  ppl= 574.880  [  16.9s]
+
+  NVFP4 ppl : 574.8801
+  BF16  ppl : 708.9354
+  Δppl      : -134.0553  (OK)
+
+====================================================================
+Stage 6 Summary — gpt-oss-20b-BF16-NVFP4-wikitext2-fixed  (NVFP4 vs BF16)
+====================================================================
+  Dataset        BF16 ppl  NVFP4 ppl     Δppl  Status
+  ──────────── ────────── ────────── ────────  ────────────────────
+  WikiText-2     226.7927   220.2932  -6.4995  ✓  OK
+  C4             708.9354   574.8801 -134.0553  ✓  OK
+
+  Results saved to: results/stage6_gpt-oss-20b-BF16-NVFP4-wikitext2-fixed_eval.json
+
+✓  NVFP4 quantization quality is within expected range.

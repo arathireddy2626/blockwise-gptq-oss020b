@@ -1,0 +1,2671 @@
+nohup: ignoring input
+====================================================================
+Stage 5 — Quantize gpt-oss-20b-BF16 → NVFP4
+====================================================================
+Model path      : models/gpt-oss-20b-BF16
+Quant format    : nvfp4
+Output dir      : models/gpt-oss-20b-BF16-NVFP4-wikitext2-fixed
+Dataset         : wikitext2  (calibration)
+n_calib         : 512 samples × 2048 tokens
+Blocksize       : 128
+Percdamp        : 0.01
+Blocksize search    : False
+Parallel Hessian    : True  (cascade fix ON)
+Mixed-prec thresh   : 50.0
+/workspace/blockwise-gptq-main/.venv/lib/python3.12/site-packages/huggingface_hub/constants.py:298: FutureWarning: The `HF_HUB_ENABLE_HF_TRANSFER` environment variable is deprecated as 'hf_transfer' is not used anymore. Please use `HF_XET_HIGH_PERFORMANCE` instead to enable high performance transfer with Xet. Visit https://huggingface.co/docs/huggingface_hub/package_reference/environment_variables#hfxethighperformance for more details.
+  warnings.warn(
+
+Device: cuda
+GPU   : NVIDIA RTX PRO 6000 Blackwell Server Edition, 95 GB
+
+Loading tokenizer and model 'gpt-oss-20b-BF16' (BF16)...
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/411 [00:00<?, ?it/s]Loading weights:   0%|          | 1/411 [00:00<02:02,  3.34it/s]Loading weights:   0%|          | 2/411 [00:00<01:36,  4.23it/s]Loading weights:   1%|          | 4/411 [00:00<00:49,  8.21it/s]Loading weights:   1%|▏         | 6/411 [00:00<00:50,  8.00it/s]Loading weights:   5%|▍         | 19/411 [00:00<00:12, 31.06it/s]Loading weights:   6%|▌         | 23/411 [00:01<00:16, 24.11it/s]Loading weights:   8%|▊         | 31/411 [00:01<00:12, 31.03it/s]Loading weights:  10%|▉         | 40/411 [00:01<00:11, 31.73it/s]Loading weights:  13%|█▎        | 55/411 [00:01<00:07, 50.26it/s]Loading weights:  15%|█▌        | 62/411 [00:02<00:12, 28.19it/s]Loading weights:  22%|██▏       | 89/411 [00:02<00:07, 43.34it/s]Loading weights:  25%|██▍       | 102/411 [00:03<00:07, 40.47it/s]Loading weights:  27%|██▋       | 112/411 [00:03<00:06, 45.74it/s]Loading weights:  30%|███       | 125/411 [00:03<00:05, 49.08it/s]Loading weights:  34%|███▍      | 139/411 [00:03<00:04, 58.52it/s]Loading weights:  36%|███▌      | 147/411 [00:03<00:05, 50.04it/s]Loading weights:  38%|███▊      | 157/411 [00:04<00:05, 43.84it/s]Loading weights:  42%|████▏     | 174/411 [00:04<00:04, 59.06it/s]Loading weights:  44%|████▍     | 182/411 [00:04<00:04, 50.23it/s]Loading weights:  47%|████▋     | 192/411 [00:04<00:04, 46.63it/s]Loading weights:  50%|████▉     | 205/411 [00:04<00:03, 55.86it/s]Loading weights:  52%|█████▏    | 212/411 [00:05<00:03, 51.20it/s]Loading weights:  55%|█████▍    | 224/411 [00:05<00:03, 61.19it/s]Loading weights:  56%|█████▋    | 232/411 [00:05<00:03, 52.39it/s]Loading weights:  58%|█████▊    | 240/411 [00:05<00:04, 40.78it/s]Loading weights:  63%|██████▎   | 258/411 [00:06<00:03, 44.64it/s]Loading weights:  67%|██████▋   | 275/411 [00:06<00:02, 53.20it/s]Loading weights:  68%|██████▊   | 281/411 [00:06<00:02, 53.34it/s]Loading weights:  71%|███████   | 291/411 [00:06<00:01, 60.86it/s]Loading weights:  73%|███████▎  | 298/411 [00:06<00:02, 52.11it/s]Loading weights:  75%|███████▌  | 310/411 [00:06<00:01, 63.41it/s]Loading weights:  77%|███████▋  | 318/411 [00:07<00:01, 55.29it/s]Loading weights:  80%|███████▉  | 327/411 [00:07<00:01, 60.52it/s]Loading weights:  81%|████████▏ | 334/411 [00:07<00:01, 42.19it/s]Loading weights:  84%|████████▎ | 344/411 [00:08<00:02, 28.14it/s]Loading weights:  88%|████████▊ | 361/411 [00:08<00:01, 39.50it/s]Loading weights:  89%|████████▉ | 367/411 [00:08<00:01, 34.50it/s]Loading weights:  92%|█████████▏| 378/411 [00:08<00:00, 39.50it/s]Loading weights:  93%|█████████▎| 383/411 [00:09<00:00, 31.55it/s]Loading weights:  96%|█████████▌| 395/411 [00:09<00:00, 39.19it/s]Loading weights:  97%|█████████▋| 400/411 [00:09<00:00, 37.04it/s]Loading weights: 100%|██████████| 411/411 [00:09<00:00, 43.10it/s]
+  Loaded in 12.1 s  (20.91 B params)
+
+────────────────────────────────────────────────────────────────────
+Running gptq_quantize_model(
+    quant_format = 'nvfp4'
+    dataset      = 'wikitext2'
+    nsamples     = 512
+    blocksize    = 128
+    mode         = 'blockwise'
+    mixed_precision_threshold = 50.0
+)
+────────────────────────────────────────────────────────────────────
+
+[GPTQ] Mixed-precision threshold: 50.0 (layers above this loss kept in BF16)
+[GPTQ] Loading calibration data: wikitext2, 512 samples, seqlen=2048
+Using the latest cached version of the dataset since wikitext couldn't be found on the Hugging Face Hub
+Found the latest cached dataset configuration 'wikitext-2-raw-v1' at /workspace/.hf_home/datasets/wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3 (last modified on Mon Jul 13 23:42:18 2026).
+[GPTQ] Identifying model structure...
+[GPTQ] Architecture: gpt_oss, 24 layers
+[GPTQ] Parallel mode — setting up Hessian accumulators for all layers...
+[GPTQ] Parallel mode — running 512 samples through original BF16 model to collect all Hessians...
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 0 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 1 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 2 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 3 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 4 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 5 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 6 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 7 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 8 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 9 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 10 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 11 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 12 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 13 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 14 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 15 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 16 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 17 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 18 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 19 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 20 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 21 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 22 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 23 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 24 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 25 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 26 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 27 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 28 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 29 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 30 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 31 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 32 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 33 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 34 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 35 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 36 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 37 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 38 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 39 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 40 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 41 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 42 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 43 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 44 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 45 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 46 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 47 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 48 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 49 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 50 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 51 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 52 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 53 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 54 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 55 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 56 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 57 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 58 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 59 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 60 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 61 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 62 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 63 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+  64/512 samples processed
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 64 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 65 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 66 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 67 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 68 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 69 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 70 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 71 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 72 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 73 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 74 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 75 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 76 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 77 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 78 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 79 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 80 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 81 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 82 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 83 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 84 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 85 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 86 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 87 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 88 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 89 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 90 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 91 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 92 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 93 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 94 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 95 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 96 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 97 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 98 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 99 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 100 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 101 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 102 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 103 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 104 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 105 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 106 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 107 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 108 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 109 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 110 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 111 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 112 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 113 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 114 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 115 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 116 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 117 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 118 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 119 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 120 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 121 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 122 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 123 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 124 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 125 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 126 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 127 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+  128/512 samples processed
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 128 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 129 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 130 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 131 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 132 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 133 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 134 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 135 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 136 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 137 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 138 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 139 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 140 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 141 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 142 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 143 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 144 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 145 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 146 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 147 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 148 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 149 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 150 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 151 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 152 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 153 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 154 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 155 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 156 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 157 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 158 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 159 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 160 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 161 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 162 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 163 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 164 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 165 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 166 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 167 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 168 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 169 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 170 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 171 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 172 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 173 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 174 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 175 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 176 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 177 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 178 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 179 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 180 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 181 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 182 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 183 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 184 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 185 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 186 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 187 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 188 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 189 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 190 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 191 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+  192/512 samples processed
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 192 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 193 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 194 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 195 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 196 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 197 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 198 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 199 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 200 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 201 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 202 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 203 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 204 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 205 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 206 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 207 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 208 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 209 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 210 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 211 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 212 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 213 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 214 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 215 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 216 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 217 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 218 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 219 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 220 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 221 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 222 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 223 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 224 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 225 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 226 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 227 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 228 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 229 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 230 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 231 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 232 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 233 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 234 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 235 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 236 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 237 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 238 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 239 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 240 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 241 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 242 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 243 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 244 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 245 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 246 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 247 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 248 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 249 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 250 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 251 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 252 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 253 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 254 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 255 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+  256/512 samples processed
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 256 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 257 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 258 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 259 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 260 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 261 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 262 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 263 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 264 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 265 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 266 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 267 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 268 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 269 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 270 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 271 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 272 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 273 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 274 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 275 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 276 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 277 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 278 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 279 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 280 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 281 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 282 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 283 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 284 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 285 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 286 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 287 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 288 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 289 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 290 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 291 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 292 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 293 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 294 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 295 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 296 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 297 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 298 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 299 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 300 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 301 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 302 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 303 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 304 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 305 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 306 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 307 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 308 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 309 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 310 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 311 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 312 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 313 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 314 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 315 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 316 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 317 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 318 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 319 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+  320/512 samples processed
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 320 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 321 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 322 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 323 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 324 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 325 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 326 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 327 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 328 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 329 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 330 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 331 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 332 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 333 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 334 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 335 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 336 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 337 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 338 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 339 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 340 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 341 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 342 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 343 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 344 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 345 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 346 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 347 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 348 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 349 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 350 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 351 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 352 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 353 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 354 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 355 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 356 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 357 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 358 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 359 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 360 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 361 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 362 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 363 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 364 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 365 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 366 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 367 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 368 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 369 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 370 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 371 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 372 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 373 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 374 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 375 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 376 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 377 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 378 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 379 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 380 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 381 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 382 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 383 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+  384/512 samples processed
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 384 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 385 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 386 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 387 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 388 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 389 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 390 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 391 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 392 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 393 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 394 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 395 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 396 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 397 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 398 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 399 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 400 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 401 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 402 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 403 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 404 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 405 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 406 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 407 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 408 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 409 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 410 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 411 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 412 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 413 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 414 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 415 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 416 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 417 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 418 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 419 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 420 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 421 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 422 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 423 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 424 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 425 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 426 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 427 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 428 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 429 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 430 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 431 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 432 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 433 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 434 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 435 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 436 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 437 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 438 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 439 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 440 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 441 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 442 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 443 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 444 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 445 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 446 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 447 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+  448/512 samples processed
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 448 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 449 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 450 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 451 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 452 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 453 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 454 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 455 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 456 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 457 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 458 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 459 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 460 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 461 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 462 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 463 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 464 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 465 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 466 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 467 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 468 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 469 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 470 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 471 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 472 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 473 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 474 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 475 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 476 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 477 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 478 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 479 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 480 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 481 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 482 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 483 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 484 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 485 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 486 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 487 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 488 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 489 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 490 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 491 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 492 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 493 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 494 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 495 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 496 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 497 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 498 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 499 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 500 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 501 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 502 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 503 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 504 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 505 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 506 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 507 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 508 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 509 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 510 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+/workspace/blockwise-gptq-main/opteam-blockwise-gptq/apply.py:552: UserWarning: [GPTQ] Sample 511 raised IndexError: index 4 is out of bounds for dimension 1 with size 4; skipping.
+  warnings.warn(
+  512/512 samples processed
+[GPTQ] Saving Hessians to hessian_cache/gpt-oss-20b-BF16_wikitext2_n512_s2048_seed0 (streaming per-layer to cap RAM)...
+[GPTQ] Hessians saved to hessian_cache/gpt-oss-20b-BF16_wikitext2_n512_s2048_seed0  (3.7 GB total, streamed per-layer)
+[GPTQ] Hessian collection complete. Starting quantization...
+[GPTQ] Layer 0/23: (4 attn/gate)     expert[00] gate_up  → NVFP4 (loss=0.1350)
+    expert[00] down     → NVFP4 (loss=0.0772)
+    expert[01] gate_up  → NVFP4 (loss=0.0432)
+    expert[01] down     → NVFP4 (loss=0.0587)
+    expert[02] gate_up  → NVFP4 (loss=0.0828)
+    expert[02] down     → NVFP4 (loss=0.0561)
+    expert[03] gate_up  → NVFP4 (loss=0.1170)
+    expert[03] down     → NVFP4 (loss=0.1023)
+    expert[04] gate_up  → NVFP4 (loss=0.0618)
+    expert[04] down     → NVFP4 (loss=0.0724)
+    expert[05] gate_up  → RTN  (no Hessian)
+    expert[05] down     → RTN  (no Hessian)
+    expert[06] gate_up  → RTN  (no Hessian)
+    expert[06] down     → RTN  (no Hessian)
+    expert[07] gate_up  → RTN  (no Hessian)
+    expert[07] down     → RTN  (no Hessian)
+    expert[08] gate_up  → RTN  (no Hessian)
+    expert[08] down     → RTN  (no Hessian)
+    expert[09] gate_up  → RTN  (no Hessian)
+    expert[09] down     → RTN  (no Hessian)
+    expert[10] gate_up  → RTN  (no Hessian)
+    expert[10] down     → RTN  (no Hessian)
+    expert[11] gate_up  → RTN  (no Hessian)
+    expert[11] down     → RTN  (no Hessian)
+    expert[12] gate_up  → RTN  (no Hessian)
+    expert[12] down     → RTN  (no Hessian)
+    expert[13] gate_up  → RTN  (no Hessian)
+    expert[13] down     → RTN  (no Hessian)
+    expert[14] gate_up  → RTN  (no Hessian)
+    expert[14] down     → RTN  (no Hessian)
+    expert[15] gate_up  → RTN  (no Hessian)
+    expert[15] down     → RTN  (no Hessian)
+    expert[16] gate_up  → RTN  (no Hessian)
+    expert[16] down     → RTN  (no Hessian)
+    expert[17] gate_up  → RTN  (no Hessian)
+    expert[17] down     → RTN  (no Hessian)
+    expert[18] gate_up  → RTN  (no Hessian)
+    expert[18] down     → RTN  (no Hessian)
+    expert[19] gate_up  → RTN  (no Hessian)
+    expert[19] down     → RTN  (no Hessian)
+    expert[20] gate_up  → RTN  (no Hessian)
+    expert[20] down     → RTN  (no Hessian)
+    expert[21] gate_up  → RTN  (no Hessian)
+    expert[21] down     → RTN  (no Hessian)
+    expert[22] gate_up  → RTN  (no Hessian)
+    expert[22] down     → RTN  (no Hessian)
+    expert[23] gate_up  → RTN  (no Hessian)
+    expert[23] down     → RTN  (no Hessian)
+    expert[24] gate_up  → RTN  (no Hessian)
+    expert[24] down     → RTN  (no Hessian)
+    expert[25] gate_up  → RTN  (no Hessian)
+    expert[25] down     → RTN  (no Hessian)
+    expert[26] gate_up  → RTN  (no Hessian)
+    expert[26] down     → RTN  (no Hessian)
+    expert[27] gate_up  → RTN  (no Hessian)
+    expert[27] down     → RTN  (no Hessian)
+    expert[28] gate_up  → RTN  (no Hessian)
+    expert[28] down     → RTN  (no Hessian)
+    expert[29] gate_up  → RTN  (no Hessian)
+    expert[29] down     → RTN  (no Hessian)
+    expert[30] gate_up  → RTN  (no Hessian)
+    expert[30] down     → RTN  (no Hessian)
+    expert[31] gate_up  → RTN  (no Hessian)
+    expert[31] down     → RTN  (no Hessian)
+self_attn.q_proj=42.97, self_attn.k_proj=21.70, self_attn.v_proj=10.96, self_attn.o_proj=8.22, experts.gate_up=0.09, experts.down=0.07, rtn(27)
+[GPTQ] Layer 1/23: (4 attn/gate)     expert[00] gate_up  → RTN  (no Hessian)
+    expert[00] down     → RTN  (no Hessian)
+    expert[01] gate_up  → RTN  (no Hessian)
+    expert[01] down     → RTN  (no Hessian)
+    expert[02] gate_up  → RTN  (no Hessian)
+    expert[02] down     → RTN  (no Hessian)
+    expert[03] gate_up  → RTN  (no Hessian)
+    expert[03] down     → RTN  (no Hessian)
+    expert[04] gate_up  → RTN  (no Hessian)
+    expert[04] down     → RTN  (no Hessian)
+    expert[05] gate_up  → RTN  (no Hessian)
+    expert[05] down     → RTN  (no Hessian)
+    expert[06] gate_up  → RTN  (no Hessian)
+    expert[06] down     → RTN  (no Hessian)
+    expert[07] gate_up  → RTN  (no Hessian)
+    expert[07] down     → RTN  (no Hessian)
+    expert[08] gate_up  → RTN  (no Hessian)
+    expert[08] down     → RTN  (no Hessian)
+    expert[09] gate_up  → RTN  (no Hessian)
+    expert[09] down     → RTN  (no Hessian)
+    expert[10] gate_up  → RTN  (no Hessian)
+    expert[10] down     → RTN  (no Hessian)
+    expert[11] gate_up  → RTN  (no Hessian)
+    expert[11] down     → RTN  (no Hessian)
+    expert[12] gate_up  → RTN  (no Hessian)
+    expert[12] down     → RTN  (no Hessian)
+    expert[13] gate_up  → RTN  (no Hessian)
+    expert[13] down     → RTN  (no Hessian)
+    expert[14] gate_up  → RTN  (no Hessian)
+    expert[14] down     → RTN  (no Hessian)
+    expert[15] gate_up  → RTN  (no Hessian)
+    expert[15] down     → RTN  (no Hessian)
+    expert[16] gate_up  → RTN  (no Hessian)
+    expert[16] down     → RTN  (no Hessian)
+    expert[17] gate_up  → RTN  (no Hessian)
+    expert[17] down     → RTN  (no Hessian)
+    expert[18] gate_up  → RTN  (no Hessian)
+    expert[18] down     → RTN  (no Hessian)
+    expert[19] gate_up  → RTN  (no Hessian)
+    expert[19] down     → RTN  (no Hessian)
+    expert[20] gate_up  → RTN  (no Hessian)
+    expert[20] down     → RTN  (no Hessian)
+    expert[21] gate_up  → RTN  (no Hessian)
+    expert[21] down     → RTN  (no Hessian)
+    expert[22] gate_up  → RTN  (no Hessian)
+    expert[22] down     → RTN  (no Hessian)
+    expert[23] gate_up  → RTN  (no Hessian)
+    expert[23] down     → RTN  (no Hessian)
+    expert[24] gate_up  → RTN  (no Hessian)
+    expert[24] down     → RTN  (no Hessian)
+    expert[25] gate_up  → RTN  (no Hessian)
+    expert[25] down     → RTN  (no Hessian)
+    expert[26] gate_up  → RTN  (no Hessian)
+    expert[26] down     → RTN  (no Hessian)
+    expert[27] gate_up  → RTN  (no Hessian)
+    expert[27] down     → RTN  (no Hessian)
+    expert[28] gate_up  → RTN  (no Hessian)
+    expert[28] down     → RTN  (no Hessian)
+    expert[29] gate_up  → RTN  (no Hessian)
+    expert[29] down     → RTN  (no Hessian)
+    expert[30] gate_up  → RTN  (no Hessian)
+    expert[30] down     → RTN  (no Hessian)
+    expert[31] gate_up  → RTN  (no Hessian)
+    expert[31] down     → RTN  (no Hessian)
+experts.gate_up=BF16, experts.down=BF16, rtn(36)
+[GPTQ] Layer 2/23: (4 attn/gate)     expert[00] gate_up  → RTN  (no Hessian)
+    expert[00] down     → RTN  (no Hessian)
+    expert[01] gate_up  → RTN  (no Hessian)
+    expert[01] down     → RTN  (no Hessian)
+    expert[02] gate_up  → RTN  (no Hessian)
+    expert[02] down     → RTN  (no Hessian)
+    expert[03] gate_up  → RTN  (no Hessian)
+    expert[03] down     → RTN  (no Hessian)
+    expert[04] gate_up  → RTN  (no Hessian)
+    expert[04] down     → RTN  (no Hessian)
+    expert[05] gate_up  → RTN  (no Hessian)
+    expert[05] down     → RTN  (no Hessian)
+    expert[06] gate_up  → RTN  (no Hessian)
+    expert[06] down     → RTN  (no Hessian)
+    expert[07] gate_up  → RTN  (no Hessian)
+    expert[07] down     → RTN  (no Hessian)
+    expert[08] gate_up  → RTN  (no Hessian)
+    expert[08] down     → RTN  (no Hessian)
+    expert[09] gate_up  → RTN  (no Hessian)
+    expert[09] down     → RTN  (no Hessian)
+    expert[10] gate_up  → RTN  (no Hessian)
+    expert[10] down     → RTN  (no Hessian)
+    expert[11] gate_up  → RTN  (no Hessian)
+    expert[11] down     → RTN  (no Hessian)
+    expert[12] gate_up  → RTN  (no Hessian)
+    expert[12] down     → RTN  (no Hessian)
+    expert[13] gate_up  → RTN  (no Hessian)
+    expert[13] down     → RTN  (no Hessian)
+    expert[14] gate_up  → RTN  (no Hessian)
+    expert[14] down     → RTN  (no Hessian)
+    expert[15] gate_up  → RTN  (no Hessian)
+    expert[15] down     → RTN  (no Hessian)
+    expert[16] gate_up  → RTN  (no Hessian)
+    expert[16] down     → RTN  (no Hessian)
+    expert[17] gate_up  → RTN  (no Hessian)
+    expert[17] down     → RTN  (no Hessian)
+    expert[18] gate_up  → RTN  (no Hessian)
+    expert[18] down     → RTN  (no Hessian)
+    expert[19] gate_up  → RTN  (no Hessian)
+    expert[19] down     → RTN  (no Hessian)
+    expert[20] gate_up  → RTN  (no Hessian)
+    expert[20] down     → RTN  (no Hessian)
+    expert[21] gate_up  → RTN  (no Hessian)
+    expert[21] down     → RTN  (no Hessian)
+    expert[22] gate_up  → RTN  (no Hessian)
+    expert[22] down     → RTN  (no Hessian)
+    expert[23] gate_up  → RTN  (no Hessian)
+    expert[23] down     → RTN  (no Hessian)
+    expert[24] gate_up  → RTN  (no Hessian)
+    expert[24] down     → RTN  (no Hessian)
+    expert[25] gate_up  → RTN  (no Hessian)
+    expert[25] down     → RTN  (no Hessian)
+    expert[26] gate_up  → RTN  (no Hessian)
+    expert[26] down     → RTN  (no Hessian)
+    expert[27] gate_up  → RTN  (no Hessian)
+    expert[27] down     → RTN  (no Hessian)
+    expert[28] gate_up  → RTN  (no Hessian)
+    expert[28] down     → RTN  (no Hessian)
+    expert[29] gate_up  → RTN  (no Hessian)
+    expert[29] down     → RTN  (no Hessian)
+    expert[30] gate_up  → RTN  (no Hessian)
+    expert[30] down     → RTN  (no Hessian)
+    expert[31] gate_up  → RTN  (no Hessian)
+    expert[31] down     → RTN  (no Hessian)
+experts.gate_up=BF16, experts.down=BF16, rtn(36)
+[GPTQ] Layer 3/23: (4 attn/gate)     expert[00] gate_up  → RTN  (no Hessian)
+    expert[00] down     → RTN  (no Hessian)
+    expert[01] gate_up  → RTN  (no Hessian)
+    expert[01] down     → RTN  (no Hessian)
+    expert[02] gate_up  → RTN  (no Hessian)
+    expert[02] down     → RTN  (no Hessian)
+    expert[03] gate_up  → RTN  (no Hessian)
+    expert[03] down     → RTN  (no Hessian)
+    expert[04] gate_up  → RTN  (no Hessian)
+    expert[04] down     → RTN  (no Hessian)
+    expert[05] gate_up  → RTN  (no Hessian)
+    expert[05] down     → RTN  (no Hessian)
+    expert[06] gate_up  → RTN  (no Hessian)
+    expert[06] down     → RTN  (no Hessian)
+    expert[07] gate_up  → RTN  (no Hessian)
+    expert[07] down     → RTN  (no Hessian)
+    expert[08] gate_up  → RTN  (no Hessian)
+    expert[08] down     → RTN  (no Hessian)
+    expert[09] gate_up  → RTN  (no Hessian)
+    expert[09] down     → RTN  (no Hessian)
+    expert[10] gate_up  → RTN  (no Hessian)
+    expert[10] down     → RTN  (no Hessian)
+    expert[11] gate_up  → RTN  (no Hessian)
+    expert[11] down     → RTN  (no Hessian)
+    expert[12] gate_up  → RTN  (no Hessian)
+    expert[12] down     → RTN  (no Hessian)
+    expert[13] gate_up  → RTN  (no Hessian)
+    expert[13] down     → RTN  (no Hessian)
+    expert[14] gate_up  → RTN  (no Hessian)
+    expert[14] down     → RTN  (no Hessian)
+    expert[15] gate_up  → RTN  (no Hessian)
+    expert[15] down     → RTN  (no Hessian)
+    expert[16] gate_up  → RTN  (no Hessian)
+    expert[16] down     → RTN  (no Hessian)
+    expert[17] gate_up  → RTN  (no Hessian)
+    expert[17] down     → RTN  (no Hessian)
+    expert[18] gate_up  → RTN  (no Hessian)
+    expert[18] down     → RTN  (no Hessian)
+    expert[19] gate_up  → RTN  (no Hessian)
+    expert[19] down     → RTN  (no Hessian)
+    expert[20] gate_up  → RTN  (no Hessian)
+    expert[20] down     → RTN  (no Hessian)
+    expert[21] gate_up  → RTN  (no Hessian)
+    expert[21] down     → RTN  (no Hessian)
+    expert[22] gate_up  → RTN  (no Hessian)
+    expert[22] down     → RTN  (no Hessian)
+    expert[23] gate_up  → RTN  (no Hessian)
+    expert[23] down     → RTN  (no Hessian)
+    expert[24] gate_up  → RTN  (no Hessian)
+    expert[24] down     → RTN  (no Hessian)
+    expert[25] gate_up  → RTN  (no Hessian)
+    expert[25] down     → RTN  (no Hessian)
+    expert[26] gate_up  → RTN  (no Hessian)
+    expert[26] down     → RTN  (no Hessian)
+    expert[27] gate_up  → RTN  (no Hessian)
+    expert[27] down     → RTN  (no Hessian)
+    expert[28] gate_up  → RTN  (no Hessian)
+    expert[28] down     → RTN  (no Hessian)
+    expert[29] gate_up  → RTN  (no Hessian)
+    expert[29] down     → RTN  (no Hessian)
+    expert[30] gate_up  → RTN  (no Hessian)
+    expert[30] down     → RTN  (no Hessian)
+    expert[31] gate_up  → RTN  (no Hessian)
+    expert[31] down     → RTN  (no Hessian)
+experts.gate_up=BF16, experts.down=BF16, rtn(36)
+[GPTQ] Layer 4/23: (4 attn/gate)     expert[00] gate_up  → RTN  (no Hessian)
+    expert[00] down     → RTN  (no Hessian)
+    expert[01] gate_up  → RTN  (no Hessian)
+    expert[01] down     → RTN  (no Hessian)
+    expert[02] gate_up  → RTN  (no Hessian)
+    expert[02] down     → RTN  (no Hessian)
+    expert[03] gate_up  → RTN  (no Hessian)
+    expert[03] down     → RTN  (no Hessian)
+    expert[04] gate_up  → RTN  (no Hessian)
+    expert[04] down     → RTN  (no Hessian)
+    expert[05] gate_up  → RTN  (no Hessian)
+    expert[05] down     → RTN  (no Hessian)
+    expert[06] gate_up  → RTN  (no Hessian)
+    expert[06] down     → RTN  (no Hessian)
+    expert[07] gate_up  → RTN  (no Hessian)
+    expert[07] down     → RTN  (no Hessian)
+    expert[08] gate_up  → RTN  (no Hessian)
+    expert[08] down     → RTN  (no Hessian)
+    expert[09] gate_up  → RTN  (no Hessian)
+    expert[09] down     → RTN  (no Hessian)
+    expert[10] gate_up  → RTN  (no Hessian)
+    expert[10] down     → RTN  (no Hessian)
+    expert[11] gate_up  → RTN  (no Hessian)
+    expert[11] down     → RTN  (no Hessian)
+    expert[12] gate_up  → RTN  (no Hessian)
+    expert[12] down     → RTN  (no Hessian)
+    expert[13] gate_up  → RTN  (no Hessian)
+    expert[13] down     → RTN  (no Hessian)
+    expert[14] gate_up  → RTN  (no Hessian)
+    expert[14] down     → RTN  (no Hessian)
+    expert[15] gate_up  → RTN  (no Hessian)
+    expert[15] down     → RTN  (no Hessian)
+    expert[16] gate_up  → RTN  (no Hessian)
+    expert[16] down     → RTN  (no Hessian)
+    expert[17] gate_up  → RTN  (no Hessian)
+    expert[17] down     → RTN  (no Hessian)
+    expert[18] gate_up  → RTN  (no Hessian)
+    expert[18] down     → RTN  (no Hessian)
+    expert[19] gate_up  → RTN  (no Hessian)
+    expert[19] down     → RTN  (no Hessian)
+    expert[20] gate_up  → RTN  (no Hessian)
+    expert[20] down     → RTN  (no Hessian)
+    expert[21] gate_up  → RTN  (no Hessian)
+    expert[21] down     → RTN  (no Hessian)
+    expert[22] gate_up  → RTN  (no Hessian)
+    expert[22] down     → RTN  (no Hessian)
+    expert[23] gate_up  → RTN  (no Hessian)
+    expert[23] down     → RTN  (no Hessian)
+    expert[24] gate_up  → RTN  (no Hessian)
+    expert[24] down     → RTN  (no Hessian)
+    expert[25] gate_up  → RTN  (no Hessian)
+    expert[25] down     → RTN  (no Hessian)
+    expert[26] gate_up  → RTN  (no Hessian)
+    expert[26] down     → RTN  (no Hessian)
+    expert[27] gate_up  → RTN  (no Hessian)
+    expert[27] down     → RTN  (no Hessian)
+    expert[28] gate_up  → RTN  (no Hessian)
+    expert[28] down     → RTN  (no Hessian)
+    expert[29] gate_up  → RTN  (no Hessian)
+    expert[29] down     → RTN  (no Hessian)
+    expert[30] gate_up  → RTN  (no Hessian)
+    expert[30] down     → RTN  (no Hessian)
+    expert[31] gate_up  → RTN  (no Hessian)
+    expert[31] down     → RTN  (no Hessian)
+experts.gate_up=BF16, experts.down=BF16, rtn(36)
+[GPTQ] Layer 5/23: (4 attn/gate)     expert[00] gate_up  → RTN  (no Hessian)
+    expert[00] down     → RTN  (no Hessian)
+    expert[01] gate_up  → RTN  (no Hessian)
+    expert[01] down     → RTN  (no Hessian)
+    expert[02] gate_up  → RTN  (no Hessian)
+    expert[02] down     → RTN  (no Hessian)
+    expert[03] gate_up  → RTN  (no Hessian)
+    expert[03] down     → RTN  (no Hessian)
+    expert[04] gate_up  → RTN  (no Hessian)
+    expert[04] down     → RTN  (no Hessian)
+    expert[05] gate_up  → RTN  (no Hessian)
+    expert[05] down     → RTN  (no Hessian)
+    expert[06] gate_up  → RTN  (no Hessian)
+    expert[06] down     → RTN  (no Hessian)
+    expert[07] gate_up  → RTN  (no Hessian)
+    expert[07] down     → RTN  (no Hessian)
+    expert[08] gate_up  → RTN  (no Hessian)
+    expert[08] down     → RTN  (no Hessian)
+    expert[09] gate_up  → RTN  (no Hessian)
+    expert[09] down     → RTN  (no Hessian)
+    expert[10] gate_up  → RTN  (no Hessian)
+    expert[10] down     → RTN  (no Hessian)
+    expert[11] gate_up  → RTN  (no Hessian)
+    expert[11] down     → RTN  (no Hessian)
+    expert[12] gate_up  → RTN  (no Hessian)
+    expert[12] down     → RTN  (no Hessian)
+    expert[13] gate_up  → RTN  (no Hessian)
+    expert[13] down     → RTN  (no Hessian)
+    expert[14] gate_up  → RTN  (no Hessian)
+    expert[14] down     → RTN  (no Hessian)
+    expert[15] gate_up  → RTN  (no Hessian)
+    expert[15] down     → RTN  (no Hessian)
+    expert[16] gate_up  → RTN  (no Hessian)
+    expert[16] down     → RTN  (no Hessian)
+    expert[17] gate_up  → RTN  (no Hessian)
+    expert[17] down     → RTN  (no Hessian)
+    expert[18] gate_up  → RTN  (no Hessian)
+    expert[18] down     → RTN  (no Hessian)
+    expert[19] gate_up  → RTN  (no Hessian)
+    expert[19] down     → RTN  (no Hessian)
+    expert[20] gate_up  → RTN  (no Hessian)
+    expert[20] down     → RTN  (no Hessian)
+    expert[21] gate_up  → RTN  (no Hessian)
+    expert[21] down     → RTN  (no Hessian)
+    expert[22] gate_up  → RTN  (no Hessian)
+    expert[22] down     → RTN  (no Hessian)
+    expert[23] gate_up  → RTN  (no Hessian)
+    expert[23] down     → RTN  (no Hessian)
+    expert[24] gate_up  → RTN  (no Hessian)
+    expert[24] down     → RTN  (no Hessian)
+    expert[25] gate_up  → RTN  (no Hessian)
+    expert[25] down     → RTN  (no Hessian)
+    expert[26] gate_up  → RTN  (no Hessian)
+    expert[26] down     → RTN  (no Hessian)
+    expert[27] gate_up  → RTN  (no Hessian)
+    expert[27] down     → RTN  (no Hessian)
+    expert[28] gate_up  → RTN  (no Hessian)
+    expert[28] down     → RTN  (no Hessian)
+    expert[29] gate_up  → RTN  (no Hessian)
+    expert[29] down     → RTN  (no Hessian)
+    expert[30] gate_up  → RTN  (no Hessian)
+    expert[30] down     → RTN  (no Hessian)
+    expert[31] gate_up  → RTN  (no Hessian)
+    expert[31] down     → RTN  (no Hessian)
+experts.gate_up=BF16, experts.down=BF16, rtn(36)
+[GPTQ] Layer 6/23: (4 attn/gate)     expert[00] gate_up  → RTN  (no Hessian)
+    expert[00] down     → RTN  (no Hessian)
+    expert[01] gate_up  → RTN  (no Hessian)
+    expert[01] down     → RTN  (no Hessian)
+    expert[02] gate_up  → RTN  (no Hessian)
+    expert[02] down     → RTN  (no Hessian)
+    expert[03] gate_up  → RTN  (no Hessian)
+    expert[03] down     → RTN  (no Hessian)
+    expert[04] gate_up  → RTN  (no Hessian)
+    expert[04] down     → RTN  (no Hessian)
+    expert[05] gate_up  → RTN  (no Hessian)
+    expert[05] down     → RTN  (no Hessian)
+    expert[06] gate_up  → RTN  (no Hessian)
+    expert[06] down     → RTN  (no Hessian)
+    expert[07] gate_up  → RTN  (no Hessian)
+    expert[07] down     → RTN  (no Hessian)
+    expert[08] gate_up  → RTN  (no Hessian)
+    expert[08] down     → RTN  (no Hessian)
+    expert[09] gate_up  → RTN  (no Hessian)
+    expert[09] down     → RTN  (no Hessian)
+    expert[10] gate_up  → RTN  (no Hessian)
+    expert[10] down     → RTN  (no Hessian)
+    expert[11] gate_up  → RTN  (no Hessian)
+    expert[11] down     → RTN  (no Hessian)
+    expert[12] gate_up  → RTN  (no Hessian)
+    expert[12] down     → RTN  (no Hessian)
+    expert[13] gate_up  → RTN  (no Hessian)
+    expert[13] down     → RTN  (no Hessian)
+    expert[14] gate_up  → RTN  (no Hessian)
+    expert[14] down     → RTN  (no Hessian)
+    expert[15] gate_up  → RTN  (no Hessian)
+    expert[15] down     → RTN  (no Hessian)
+    expert[16] gate_up  → RTN  (no Hessian)
+    expert[16] down     → RTN  (no Hessian)
+    expert[17] gate_up  → RTN  (no Hessian)
+    expert[17] down     → RTN  (no Hessian)
+    expert[18] gate_up  → RTN  (no Hessian)
+    expert[18] down     → RTN  (no Hessian)
+    expert[19] gate_up  → RTN  (no Hessian)
+    expert[19] down     → RTN  (no Hessian)
+    expert[20] gate_up  → RTN  (no Hessian)
+    expert[20] down     → RTN  (no Hessian)
+    expert[21] gate_up  → RTN  (no Hessian)
+    expert[21] down     → RTN  (no Hessian)
+    expert[22] gate_up  → RTN  (no Hessian)
+    expert[22] down     → RTN  (no Hessian)
+    expert[23] gate_up  → RTN  (no Hessian)
+    expert[23] down     → RTN  (no Hessian)
+    expert[24] gate_up  → RTN  (no Hessian)
+    expert[24] down     → RTN  (no Hessian)
+    expert[25] gate_up  → RTN  (no Hessian)
+    expert[25] down     → RTN  (no Hessian)
+    expert[26] gate_up  → RTN  (no Hessian)
+    expert[26] down     → RTN  (no Hessian)
+    expert[27] gate_up  → RTN  (no Hessian)
+    expert[27] down     → RTN  (no Hessian)
+    expert[28] gate_up  → RTN  (no Hessian)
+    expert[28] down     → RTN  (no Hessian)
+    expert[29] gate_up  → RTN  (no Hessian)
+    expert[29] down     → RTN  (no Hessian)
+    expert[30] gate_up  → RTN  (no Hessian)
+    expert[30] down     → RTN  (no Hessian)
+    expert[31] gate_up  → RTN  (no Hessian)
+    expert[31] down     → RTN  (no Hessian)
+experts.gate_up=BF16, experts.down=BF16, rtn(36)
+[GPTQ] Layer 7/23: (4 attn/gate)     expert[00] gate_up  → RTN  (no Hessian)
+    expert[00] down     → RTN  (no Hessian)
+    expert[01] gate_up  → RTN  (no Hessian)
+    expert[01] down     → RTN  (no Hessian)
+    expert[02] gate_up  → RTN  (no Hessian)
+    expert[02] down     → RTN  (no Hessian)
+    expert[03] gate_up  → RTN  (no Hessian)
+    expert[03] down     → RTN  (no Hessian)
+    expert[04] gate_up  → RTN  (no Hessian)
+    expert[04] down     → RTN  (no Hessian)
+    expert[05] gate_up  → RTN  (no Hessian)
+    expert[05] down     → RTN  (no Hessian)
+    expert[06] gate_up  → RTN  (no Hessian)
+    expert[06] down     → RTN  (no Hessian)
+    expert[07] gate_up  → RTN  (no Hessian)
+    expert[07] down     → RTN  (no Hessian)
+    expert[08] gate_up  → RTN  (no Hessian)
+    expert[08] down     → RTN  (no Hessian)
+    expert[09] gate_up  → RTN  (no Hessian)
+    expert[09] down     → RTN  (no Hessian)
+    expert[10] gate_up  → RTN  (no Hessian)
+    expert[10] down     → RTN  (no Hessian)
+    expert[11] gate_up  → RTN  (no Hessian)
+    expert[11] down     → RTN  (no Hessian)
+    expert[12] gate_up  → RTN  (no Hessian)
+    expert[12] down     → RTN  (no Hessian)
+    expert[13] gate_up  → RTN  (no Hessian)
+    expert[13] down     → RTN  (no Hessian)
+    expert[14] gate_up  → RTN  (no Hessian)
+    expert[14] down     → RTN  (no Hessian)
+    expert[15] gate_up  → RTN  (no Hessian)
+    expert[15] down     → RTN  (no Hessian)
+    expert[16] gate_up  → RTN  (no Hessian)
+    expert[16] down     → RTN  (no Hessian)
+    expert[17] gate_up  → RTN  (no Hessian)
+    expert[17] down     → RTN  (no Hessian)
+    expert[18] gate_up  → RTN  (no Hessian)
+    expert[18] down     → RTN  (no Hessian)
+    expert[19] gate_up  → RTN  (no Hessian)
+    expert[19] down     → RTN  (no Hessian)
+    expert[20] gate_up  → RTN  (no Hessian)
+    expert[20] down     → RTN  (no Hessian)
+    expert[21] gate_up  → RTN  (no Hessian)
+    expert[21] down     → RTN  (no Hessian)
+    expert[22] gate_up  → RTN  (no Hessian)
+    expert[22] down     → RTN  (no Hessian)
+    expert[23] gate_up  → RTN  (no Hessian)
+    expert[23] down     → RTN  (no Hessian)
+    expert[24] gate_up  → RTN  (no Hessian)
+    expert[24] down     → RTN  (no Hessian)
+    expert[25] gate_up  → RTN  (no Hessian)
+    expert[25] down     → RTN  (no Hessian)
+    expert[26] gate_up  → RTN  (no Hessian)
+    expert[26] down     → RTN  (no Hessian)
+    expert[27] gate_up  → RTN  (no Hessian)
+    expert[27] down     → RTN  (no Hessian)
+    expert[28] gate_up  → RTN  (no Hessian)
+    expert[28] down     → RTN  (no Hessian)
+    expert[29] gate_up  → RTN  (no Hessian)
+    expert[29] down     → RTN  (no Hessian)
+    expert[30] gate_up  → RTN  (no Hessian)
+    expert[30] down     → RTN  (no Hessian)
+    expert[31] gate_up  → RTN  (no Hessian)
+    expert[31] down     → RTN  (no Hessian)
+experts.gate_up=BF16, experts.down=BF16, rtn(36)
+[GPTQ] Layer 8/23: (4 attn/gate)     expert[00] gate_up  → RTN  (no Hessian)
+    expert[00] down     → RTN  (no Hessian)
+    expert[01] gate_up  → RTN  (no Hessian)
+    expert[01] down     → RTN  (no Hessian)
+    expert[02] gate_up  → RTN  (no Hessian)
+    expert[02] down     → RTN  (no Hessian)
+    expert[03] gate_up  → RTN  (no Hessian)
+    expert[03] down     → RTN  (no Hessian)
+    expert[04] gate_up  → RTN  (no Hessian)
+    expert[04] down     → RTN  (no Hessian)
+    expert[05] gate_up  → RTN  (no Hessian)
+    expert[05] down     → RTN  (no Hessian)
+    expert[06] gate_up  → RTN  (no Hessian)
+    expert[06] down     → RTN  (no Hessian)
+    expert[07] gate_up  → RTN  (no Hessian)
+    expert[07] down     → RTN  (no Hessian)
+    expert[08] gate_up  → RTN  (no Hessian)
+    expert[08] down     → RTN  (no Hessian)
+    expert[09] gate_up  → RTN  (no Hessian)
+    expert[09] down     → RTN  (no Hessian)
+    expert[10] gate_up  → RTN  (no Hessian)
+    expert[10] down     → RTN  (no Hessian)
+    expert[11] gate_up  → RTN  (no Hessian)
+    expert[11] down     → RTN  (no Hessian)
+    expert[12] gate_up  → RTN  (no Hessian)
+    expert[12] down     → RTN  (no Hessian)
+    expert[13] gate_up  → RTN  (no Hessian)
+    expert[13] down     → RTN  (no Hessian)
+    expert[14] gate_up  → RTN  (no Hessian)
+    expert[14] down     → RTN  (no Hessian)
+    expert[15] gate_up  → RTN  (no Hessian)
+    expert[15] down     → RTN  (no Hessian)
+    expert[16] gate_up  → RTN  (no Hessian)
+    expert[16] down     → RTN  (no Hessian)
+    expert[17] gate_up  → RTN  (no Hessian)
+    expert[17] down     → RTN  (no Hessian)
+    expert[18] gate_up  → RTN  (no Hessian)
+    expert[18] down     → RTN  (no Hessian)
+    expert[19] gate_up  → RTN  (no Hessian)
+    expert[19] down     → RTN  (no Hessian)
+    expert[20] gate_up  → RTN  (no Hessian)
+    expert[20] down     → RTN  (no Hessian)
+    expert[21] gate_up  → RTN  (no Hessian)
+    expert[21] down     → RTN  (no Hessian)
+    expert[22] gate_up  → RTN  (no Hessian)
+    expert[22] down     → RTN  (no Hessian)
+    expert[23] gate_up  → RTN  (no Hessian)
+    expert[23] down     → RTN  (no Hessian)
+    expert[24] gate_up  → RTN  (no Hessian)
+    expert[24] down     → RTN  (no Hessian)
+    expert[25] gate_up  → RTN  (no Hessian)
+    expert[25] down     → RTN  (no Hessian)
+    expert[26] gate_up  → RTN  (no Hessian)
+    expert[26] down     → RTN  (no Hessian)
+    expert[27] gate_up  → RTN  (no Hessian)
+    expert[27] down     → RTN  (no Hessian)
+    expert[28] gate_up  → RTN  (no Hessian)
+    expert[28] down     → RTN  (no Hessian)
+    expert[29] gate_up  → RTN  (no Hessian)
+    expert[29] down     → RTN  (no Hessian)
+    expert[30] gate_up  → RTN  (no Hessian)
+    expert[30] down     → RTN  (no Hessian)
+    expert[31] gate_up  → RTN  (no Hessian)
+    expert[31] down     → RTN  (no Hessian)
+experts.gate_up=BF16, experts.down=BF16, rtn(36)
+[GPTQ] Layer 9/23: (4 attn/gate)     expert[00] gate_up  → RTN  (no Hessian)
+    expert[00] down     → RTN  (no Hessian)
+    expert[01] gate_up  → RTN  (no Hessian)
+    expert[01] down     → RTN  (no Hessian)
+    expert[02] gate_up  → RTN  (no Hessian)
+    expert[02] down     → RTN  (no Hessian)
+    expert[03] gate_up  → RTN  (no Hessian)
+    expert[03] down     → RTN  (no Hessian)
+    expert[04] gate_up  → RTN  (no Hessian)
+    expert[04] down     → RTN  (no Hessian)
+    expert[05] gate_up  → RTN  (no Hessian)
+    expert[05] down     → RTN  (no Hessian)
+    expert[06] gate_up  → RTN  (no Hessian)
+    expert[06] down     → RTN  (no Hessian)
+    expert[07] gate_up  → RTN  (no Hessian)
+    expert[07] down     → RTN  (no Hessian)
+    expert[08] gate_up  → RTN  (no Hessian)
+    expert[08] down     → RTN  (no Hessian)
+    expert[09] gate_up  → RTN  (no Hessian)
+    expert[09] down     → RTN  (no Hessian)
+    expert[10] gate_up  → RTN  (no Hessian)
+    expert[10] down     → RTN  (no Hessian)
+    expert[11] gate_up  → RTN  (no Hessian)
+    expert[11] down     → RTN  (no Hessian)
+    expert[12] gate_up  → RTN  (no Hessian)
+    expert[12] down     → RTN  (no Hessian)
+    expert[13] gate_up  → RTN  (no Hessian)
+    expert[13] down     → RTN  (no Hessian)
+    expert[14] gate_up  → RTN  (no Hessian)
+    expert[14] down     → RTN  (no Hessian)
+    expert[15] gate_up  → RTN  (no Hessian)
+    expert[15] down     → RTN  (no Hessian)
+    expert[16] gate_up  → RTN  (no Hessian)
+    expert[16] down     → RTN  (no Hessian)
+    expert[17] gate_up  → RTN  (no Hessian)
+    expert[17] down     → RTN  (no Hessian)
+    expert[18] gate_up  → RTN  (no Hessian)
+    expert[18] down     → RTN  (no Hessian)
+    expert[19] gate_up  → RTN  (no Hessian)
+    expert[19] down     → RTN  (no Hessian)
+    expert[20] gate_up  → RTN  (no Hessian)
+    expert[20] down     → RTN  (no Hessian)
+    expert[21] gate_up  → RTN  (no Hessian)
+    expert[21] down     → RTN  (no Hessian)
+    expert[22] gate_up  → RTN  (no Hessian)
+    expert[22] down     → RTN  (no Hessian)
+    expert[23] gate_up  → RTN  (no Hessian)
+    expert[23] down     → RTN  (no Hessian)
+    expert[24] gate_up  → RTN  (no Hessian)
+    expert[24] down     → RTN  (no Hessian)
+    expert[25] gate_up  → RTN  (no Hessian)
+    expert[25] down     → RTN  (no Hessian)
+    expert[26] gate_up  → RTN  (no Hessian)
+    expert[26] down     → RTN  (no Hessian)
+    expert[27] gate_up  → RTN  (no Hessian)
+    expert[27] down     → RTN  (no Hessian)
+    expert[28] gate_up  → RTN  (no Hessian)
+    expert[28] down     → RTN  (no Hessian)
+    expert[29] gate_up  → RTN  (no Hessian)
+    expert[29] down     → RTN  (no Hessian)
+    expert[30] gate_up  → RTN  (no Hessian)
+    expert[30] down     → RTN  (no Hessian)
+    expert[31] gate_up  → RTN  (no Hessian)
+    expert[31] down     → RTN  (no Hessian)
+experts.gate_up=BF16, experts.down=BF16, rtn(36)
+[GPTQ] Layer 10/23: (4 attn/gate)     expert[00] gate_up  → RTN  (no Hessian)
+    expert[00] down     → RTN  (no Hessian)
+    expert[01] gate_up  → RTN  (no Hessian)
+    expert[01] down     → RTN  (no Hessian)
+    expert[02] gate_up  → RTN  (no Hessian)
+    expert[02] down     → RTN  (no Hessian)
+    expert[03] gate_up  → RTN  (no Hessian)
+    expert[03] down     → RTN  (no Hessian)
+    expert[04] gate_up  → RTN  (no Hessian)
+    expert[04] down     → RTN  (no Hessian)
+    expert[05] gate_up  → RTN  (no Hessian)
+    expert[05] down     → RTN  (no Hessian)
+    expert[06] gate_up  → RTN  (no Hessian)
+    expert[06] down     → RTN  (no Hessian)
+    expert[07] gate_up  → RTN  (no Hessian)
+    expert[07] down     → RTN  (no Hessian)
+    expert[08] gate_up  → RTN  (no Hessian)
+    expert[08] down     → RTN  (no Hessian)
+    expert[09] gate_up  → RTN  (no Hessian)
+    expert[09] down     → RTN  (no Hessian)
+    expert[10] gate_up  → RTN  (no Hessian)
+    expert[10] down     → RTN  (no Hessian)
+    expert[11] gate_up  → RTN  (no Hessian)
+    expert[11] down     → RTN  (no Hessian)
+    expert[12] gate_up  → RTN  (no Hessian)
+    expert[12] down     → RTN  (no Hessian)
+    expert[13] gate_up  → RTN  (no Hessian)
+    expert[13] down     → RTN  (no Hessian)
+    expert[14] gate_up  → RTN  (no Hessian)
+    expert[14] down     → RTN  (no Hessian)
+    expert[15] gate_up  → RTN  (no Hessian)
+    expert[15] down     → RTN  (no Hessian)
+    expert[16] gate_up  → RTN  (no Hessian)
+    expert[16] down     → RTN  (no Hessian)
+    expert[17] gate_up  → RTN  (no Hessian)
+    expert[17] down     → RTN  (no Hessian)
+    expert[18] gate_up  → RTN  (no Hessian)
+    expert[18] down     → RTN  (no Hessian)
+    expert[19] gate_up  → RTN  (no Hessian)
+    expert[19] down     → RTN  (no Hessian)
+    expert[20] gate_up  → RTN  (no Hessian)
+    expert[20] down     → RTN  (no Hessian)
+    expert[21] gate_up  → RTN  (no Hessian)
+    expert[21] down     → RTN  (no Hessian)
+    expert[22] gate_up  → RTN  (no Hessian)
+    expert[22] down     → RTN  (no Hessian)
+    expert[23] gate_up  → RTN  (no Hessian)
+    expert[23] down     → RTN  (no Hessian)
+    expert[24] gate_up  → RTN  (no Hessian)
+    expert[24] down     → RTN  (no Hessian)
+    expert[25] gate_up  → RTN  (no Hessian)
+    expert[25] down     → RTN  (no Hessian)
+    expert[26] gate_up  → RTN  (no Hessian)
+    expert[26] down     → RTN  (no Hessian)
+    expert[27] gate_up  → RTN  (no Hessian)
+    expert[27] down     → RTN  (no Hessian)
+    expert[28] gate_up  → RTN  (no Hessian)
+    expert[28] down     → RTN  (no Hessian)
+    expert[29] gate_up  → RTN  (no Hessian)
+    expert[29] down     → RTN  (no Hessian)
+    expert[30] gate_up  → RTN  (no Hessian)
+    expert[30] down     → RTN  (no Hessian)
+    expert[31] gate_up  → RTN  (no Hessian)
+    expert[31] down     → RTN  (no Hessian)
+experts.gate_up=BF16, experts.down=BF16, rtn(36)
+[GPTQ] Layer 11/23: (4 attn/gate)     expert[00] gate_up  → RTN  (no Hessian)
+    expert[00] down     → RTN  (no Hessian)
+    expert[01] gate_up  → RTN  (no Hessian)
+    expert[01] down     → RTN  (no Hessian)
+    expert[02] gate_up  → RTN  (no Hessian)
+    expert[02] down     → RTN  (no Hessian)
+    expert[03] gate_up  → RTN  (no Hessian)
+    expert[03] down     → RTN  (no Hessian)
+    expert[04] gate_up  → RTN  (no Hessian)
+    expert[04] down     → RTN  (no Hessian)
+    expert[05] gate_up  → RTN  (no Hessian)
+    expert[05] down     → RTN  (no Hessian)
+    expert[06] gate_up  → RTN  (no Hessian)
+    expert[06] down     → RTN  (no Hessian)
+    expert[07] gate_up  → RTN  (no Hessian)
+    expert[07] down     → RTN  (no Hessian)
+    expert[08] gate_up  → RTN  (no Hessian)
+    expert[08] down     → RTN  (no Hessian)
+    expert[09] gate_up  → RTN  (no Hessian)
+    expert[09] down     → RTN  (no Hessian)
+    expert[10] gate_up  → RTN  (no Hessian)
+    expert[10] down     → RTN  (no Hessian)
+    expert[11] gate_up  → RTN  (no Hessian)
+    expert[11] down     → RTN  (no Hessian)
+    expert[12] gate_up  → RTN  (no Hessian)
+    expert[12] down     → RTN  (no Hessian)
+    expert[13] gate_up  → RTN  (no Hessian)
+    expert[13] down     → RTN  (no Hessian)
+    expert[14] gate_up  → RTN  (no Hessian)
+    expert[14] down     → RTN  (no Hessian)
+    expert[15] gate_up  → RTN  (no Hessian)
+    expert[15] down     → RTN  (no Hessian)
+    expert[16] gate_up  → RTN  (no Hessian)
+    expert[16] down     → RTN  (no Hessian)
+    expert[17] gate_up  → RTN  (no Hessian)
+    expert[17] down     → RTN  (no Hessian)
+    expert[18] gate_up  → RTN  (no Hessian)
+    expert[18] down     → RTN  (no Hessian)
+    expert[19] gate_up  → RTN  (no Hessian)
+    expert[19] down     → RTN  (no Hessian)
+    expert[20] gate_up  → RTN  (no Hessian)
+    expert[20] down     → RTN  (no Hessian)
+    expert[21] gate_up  → RTN  (no Hessian)
+    expert[21] down     → RTN  (no Hessian)
+    expert[22] gate_up  → RTN  (no Hessian)
+    expert[22] down     → RTN  (no Hessian)
+    expert[23] gate_up  → RTN  (no Hessian)
+    expert[23] down     → RTN  (no Hessian)
+    expert[24] gate_up  → RTN  (no Hessian)
+    expert[24] down     → RTN  (no Hessian)
+    expert[25] gate_up  → RTN  (no Hessian)
+    expert[25] down     → RTN  (no Hessian)
+    expert[26] gate_up  → RTN  (no Hessian)
+    expert[26] down     → RTN  (no Hessian)
+    expert[27] gate_up  → RTN  (no Hessian)
+    expert[27] down     → RTN  (no Hessian)
+    expert[28] gate_up  → RTN  (no Hessian)
+    expert[28] down     → RTN  (no Hessian)
+    expert[29] gate_up  → RTN  (no Hessian)
+    expert[29] down     → RTN  (no Hessian)
+    expert[30] gate_up  → RTN  (no Hessian)
+    expert[30] down     → RTN  (no Hessian)
+    expert[31] gate_up  → RTN  (no Hessian)
+    expert[31] down     → RTN  (no Hessian)
+experts.gate_up=BF16, experts.down=BF16, rtn(36)
+[GPTQ] Layer 12/23: (4 attn/gate)     expert[00] gate_up  → RTN  (no Hessian)
+    expert[00] down     → RTN  (no Hessian)
+    expert[01] gate_up  → RTN  (no Hessian)
+    expert[01] down     → RTN  (no Hessian)
+    expert[02] gate_up  → RTN  (no Hessian)
+    expert[02] down     → RTN  (no Hessian)
+    expert[03] gate_up  → RTN  (no Hessian)
+    expert[03] down     → RTN  (no Hessian)
+    expert[04] gate_up  → RTN  (no Hessian)
+    expert[04] down     → RTN  (no Hessian)
+    expert[05] gate_up  → RTN  (no Hessian)
+    expert[05] down     → RTN  (no Hessian)
+    expert[06] gate_up  → RTN  (no Hessian)
+    expert[06] down     → RTN  (no Hessian)
+    expert[07] gate_up  → RTN  (no Hessian)
+    expert[07] down     → RTN  (no Hessian)
+    expert[08] gate_up  → RTN  (no Hessian)
+    expert[08] down     → RTN  (no Hessian)
+    expert[09] gate_up  → RTN  (no Hessian)
+    expert[09] down     → RTN  (no Hessian)
+    expert[10] gate_up  → RTN  (no Hessian)
+    expert[10] down     → RTN  (no Hessian)
+    expert[11] gate_up  → RTN  (no Hessian)
+    expert[11] down     → RTN  (no Hessian)
+    expert[12] gate_up  → RTN  (no Hessian)
+    expert[12] down     → RTN  (no Hessian)
+    expert[13] gate_up  → RTN  (no Hessian)
+    expert[13] down     → RTN  (no Hessian)
+    expert[14] gate_up  → RTN  (no Hessian)
+    expert[14] down     → RTN  (no Hessian)
+    expert[15] gate_up  → RTN  (no Hessian)
+    expert[15] down     → RTN  (no Hessian)
+    expert[16] gate_up  → RTN  (no Hessian)
+    expert[16] down     → RTN  (no Hessian)
+    expert[17] gate_up  → RTN  (no Hessian)
+    expert[17] down     → RTN  (no Hessian)
+    expert[18] gate_up  → RTN  (no Hessian)
+    expert[18] down     → RTN  (no Hessian)
+    expert[19] gate_up  → RTN  (no Hessian)
+    expert[19] down     → RTN  (no Hessian)
+    expert[20] gate_up  → RTN  (no Hessian)
+    expert[20] down     → RTN  (no Hessian)
+    expert[21] gate_up  → RTN  (no Hessian)
+    expert[21] down     → RTN  (no Hessian)
+    expert[22] gate_up  → RTN  (no Hessian)
+    expert[22] down     → RTN  (no Hessian)
+    expert[23] gate_up  → RTN  (no Hessian)
+    expert[23] down     → RTN  (no Hessian)
+    expert[24] gate_up  → RTN  (no Hessian)
+    expert[24] down     → RTN  (no Hessian)
+    expert[25] gate_up  → RTN  (no Hessian)
+    expert[25] down     → RTN  (no Hessian)
+    expert[26] gate_up  → RTN  (no Hessian)
+    expert[26] down     → RTN  (no Hessian)
+    expert[27] gate_up  → RTN  (no Hessian)
+    expert[27] down     → RTN  (no Hessian)
+    expert[28] gate_up  → RTN  (no Hessian)
+    expert[28] down     → RTN  (no Hessian)
+    expert[29] gate_up  → RTN  (no Hessian)
+    expert[29] down     → RTN  (no Hessian)
+    expert[30] gate_up  → RTN  (no Hessian)
+    expert[30] down     → RTN  (no Hessian)
+    expert[31] gate_up  → RTN  (no Hessian)
+    expert[31] down     → RTN  (no Hessian)
+experts.gate_up=BF16, experts.down=BF16, rtn(36)
+[GPTQ] Layer 13/23: (4 attn/gate)     expert[00] gate_up  → RTN  (no Hessian)
+    expert[00] down     → RTN  (no Hessian)
+    expert[01] gate_up  → RTN  (no Hessian)
+    expert[01] down     → RTN  (no Hessian)
+    expert[02] gate_up  → RTN  (no Hessian)
+    expert[02] down     → RTN  (no Hessian)
+    expert[03] gate_up  → RTN  (no Hessian)
+    expert[03] down     → RTN  (no Hessian)
+    expert[04] gate_up  → RTN  (no Hessian)
+    expert[04] down     → RTN  (no Hessian)
+    expert[05] gate_up  → RTN  (no Hessian)
+    expert[05] down     → RTN  (no Hessian)
+    expert[06] gate_up  → RTN  (no Hessian)
+    expert[06] down     → RTN  (no Hessian)
+    expert[07] gate_up  → RTN  (no Hessian)
+    expert[07] down     → RTN  (no Hessian)
+    expert[08] gate_up  → RTN  (no Hessian)
+    expert[08] down     → RTN  (no Hessian)
+    expert[09] gate_up  → RTN  (no Hessian)
+    expert[09] down     → RTN  (no Hessian)
+    expert[10] gate_up  → RTN  (no Hessian)
+    expert[10] down     → RTN  (no Hessian)
+    expert[11] gate_up  → RTN  (no Hessian)
+    expert[11] down     → RTN  (no Hessian)
+    expert[12] gate_up  → RTN  (no Hessian)
+    expert[12] down     → RTN  (no Hessian)
+    expert[13] gate_up  → RTN  (no Hessian)
+    expert[13] down     → RTN  (no Hessian)
+    expert[14] gate_up  → RTN  (no Hessian)
+    expert[14] down     → RTN  (no Hessian)
+    expert[15] gate_up  → RTN  (no Hessian)
+    expert[15] down     → RTN  (no Hessian)
+    expert[16] gate_up  → RTN  (no Hessian)
+    expert[16] down     → RTN  (no Hessian)
+    expert[17] gate_up  → RTN  (no Hessian)
+    expert[17] down     → RTN  (no Hessian)
+    expert[18] gate_up  → RTN  (no Hessian)
+    expert[18] down     → RTN  (no Hessian)
+    expert[19] gate_up  → RTN  (no Hessian)
+    expert[19] down     → RTN  (no Hessian)
+    expert[20] gate_up  → RTN  (no Hessian)
+    expert[20] down     → RTN  (no Hessian)
+    expert[21] gate_up  → RTN  (no Hessian)
+    expert[21] down     → RTN  (no Hessian)
+    expert[22] gate_up  → RTN  (no Hessian)
+    expert[22] down     → RTN  (no Hessian)
+    expert[23] gate_up  → RTN  (no Hessian)
+    expert[23] down     → RTN  (no Hessian)
+    expert[24] gate_up  → RTN  (no Hessian)
+    expert[24] down     → RTN  (no Hessian)
+    expert[25] gate_up  → RTN  (no Hessian)
+    expert[25] down     → RTN  (no Hessian)
+    expert[26] gate_up  → RTN  (no Hessian)
+    expert[26] down     → RTN  (no Hessian)
+    expert[27] gate_up  → RTN  (no Hessian)
+    expert[27] down     → RTN  (no Hessian)
+    expert[28] gate_up  → RTN  (no Hessian)
+    expert[28] down     → RTN  (no Hessian)
+    expert[29] gate_up  → RTN  (no Hessian)
+    expert[29] down     → RTN  (no Hessian)
+    expert[30] gate_up  → RTN  (no Hessian)
+    expert[30] down     → RTN  (no Hessian)
+    expert[31] gate_up  → RTN  (no Hessian)
+    expert[31] down     → RTN  (no Hessian)
+experts.gate_up=BF16, experts.down=BF16, rtn(36)
+[GPTQ] Layer 14/23: (4 attn/gate)     expert[00] gate_up  → RTN  (no Hessian)
+    expert[00] down     → RTN  (no Hessian)
+    expert[01] gate_up  → RTN  (no Hessian)
+    expert[01] down     → RTN  (no Hessian)
+    expert[02] gate_up  → RTN  (no Hessian)
+    expert[02] down     → RTN  (no Hessian)
+    expert[03] gate_up  → RTN  (no Hessian)
+    expert[03] down     → RTN  (no Hessian)
+    expert[04] gate_up  → RTN  (no Hessian)
+    expert[04] down     → RTN  (no Hessian)
+    expert[05] gate_up  → RTN  (no Hessian)
+    expert[05] down     → RTN  (no Hessian)
+    expert[06] gate_up  → RTN  (no Hessian)
+    expert[06] down     → RTN  (no Hessian)
+    expert[07] gate_up  → RTN  (no Hessian)
+    expert[07] down     → RTN  (no Hessian)
+    expert[08] gate_up  → RTN  (no Hessian)
+    expert[08] down     → RTN  (no Hessian)
+    expert[09] gate_up  → RTN  (no Hessian)
+    expert[09] down     → RTN  (no Hessian)
+    expert[10] gate_up  → RTN  (no Hessian)
+    expert[10] down     → RTN  (no Hessian)
+    expert[11] gate_up  → RTN  (no Hessian)
+    expert[11] down     → RTN  (no Hessian)
+    expert[12] gate_up  → RTN  (no Hessian)
+    expert[12] down     → RTN  (no Hessian)
+    expert[13] gate_up  → RTN  (no Hessian)
+    expert[13] down     → RTN  (no Hessian)
+    expert[14] gate_up  → RTN  (no Hessian)
+    expert[14] down     → RTN  (no Hessian)
+    expert[15] gate_up  → RTN  (no Hessian)
+    expert[15] down     → RTN  (no Hessian)
+    expert[16] gate_up  → RTN  (no Hessian)
+    expert[16] down     → RTN  (no Hessian)
+    expert[17] gate_up  → RTN  (no Hessian)
+    expert[17] down     → RTN  (no Hessian)
+    expert[18] gate_up  → RTN  (no Hessian)
+    expert[18] down     → RTN  (no Hessian)
+    expert[19] gate_up  → RTN  (no Hessian)
+    expert[19] down     → RTN  (no Hessian)
+    expert[20] gate_up  → RTN  (no Hessian)
+    expert[20] down     → RTN  (no Hessian)
+    expert[21] gate_up  → RTN  (no Hessian)
+    expert[21] down     → RTN  (no Hessian)
+    expert[22] gate_up  → RTN  (no Hessian)
+    expert[22] down     → RTN  (no Hessian)
+    expert[23] gate_up  → RTN  (no Hessian)
+    expert[23] down     → RTN  (no Hessian)
+    expert[24] gate_up  → RTN  (no Hessian)
+    expert[24] down     → RTN  (no Hessian)
+    expert[25] gate_up  → RTN  (no Hessian)
+    expert[25] down     → RTN  (no Hessian)
+    expert[26] gate_up  → RTN  (no Hessian)
+    expert[26] down     → RTN  (no Hessian)
+    expert[27] gate_up  → RTN  (no Hessian)
+    expert[27] down     → RTN  (no Hessian)
+    expert[28] gate_up  → RTN  (no Hessian)
+    expert[28] down     → RTN  (no Hessian)
+    expert[29] gate_up  → RTN  (no Hessian)
+    expert[29] down     → RTN  (no Hessian)
+    expert[30] gate_up  → RTN  (no Hessian)
+    expert[30] down     → RTN  (no Hessian)
+    expert[31] gate_up  → RTN  (no Hessian)
+    expert[31] down     → RTN  (no Hessian)
+experts.gate_up=BF16, experts.down=BF16, rtn(36)
+[GPTQ] Layer 15/23: (4 attn/gate)     expert[00] gate_up  → RTN  (no Hessian)
+    expert[00] down     → RTN  (no Hessian)
+    expert[01] gate_up  → RTN  (no Hessian)
+    expert[01] down     → RTN  (no Hessian)
+    expert[02] gate_up  → RTN  (no Hessian)
+    expert[02] down     → RTN  (no Hessian)
+    expert[03] gate_up  → RTN  (no Hessian)
+    expert[03] down     → RTN  (no Hessian)
+    expert[04] gate_up  → RTN  (no Hessian)
+    expert[04] down     → RTN  (no Hessian)
+    expert[05] gate_up  → RTN  (no Hessian)
+    expert[05] down     → RTN  (no Hessian)
+    expert[06] gate_up  → RTN  (no Hessian)
+    expert[06] down     → RTN  (no Hessian)
+    expert[07] gate_up  → RTN  (no Hessian)
+    expert[07] down     → RTN  (no Hessian)
+    expert[08] gate_up  → RTN  (no Hessian)
+    expert[08] down     → RTN  (no Hessian)
+    expert[09] gate_up  → RTN  (no Hessian)
+    expert[09] down     → RTN  (no Hessian)
+    expert[10] gate_up  → RTN  (no Hessian)
+    expert[10] down     → RTN  (no Hessian)
+    expert[11] gate_up  → RTN  (no Hessian)
+    expert[11] down     → RTN  (no Hessian)
+    expert[12] gate_up  → RTN  (no Hessian)
+    expert[12] down     → RTN  (no Hessian)
+    expert[13] gate_up  → RTN  (no Hessian)
+    expert[13] down     → RTN  (no Hessian)
+    expert[14] gate_up  → RTN  (no Hessian)
+    expert[14] down     → RTN  (no Hessian)
+    expert[15] gate_up  → RTN  (no Hessian)
+    expert[15] down     → RTN  (no Hessian)
+    expert[16] gate_up  → RTN  (no Hessian)
+    expert[16] down     → RTN  (no Hessian)
+    expert[17] gate_up  → RTN  (no Hessian)
+    expert[17] down     → RTN  (no Hessian)
+    expert[18] gate_up  → RTN  (no Hessian)
+    expert[18] down     → RTN  (no Hessian)
+    expert[19] gate_up  → RTN  (no Hessian)
+    expert[19] down     → RTN  (no Hessian)
+    expert[20] gate_up  → RTN  (no Hessian)
+    expert[20] down     → RTN  (no Hessian)
+    expert[21] gate_up  → RTN  (no Hessian)
+    expert[21] down     → RTN  (no Hessian)
+    expert[22] gate_up  → RTN  (no Hessian)
+    expert[22] down     → RTN  (no Hessian)
+    expert[23] gate_up  → RTN  (no Hessian)
+    expert[23] down     → RTN  (no Hessian)
+    expert[24] gate_up  → RTN  (no Hessian)
+    expert[24] down     → RTN  (no Hessian)
+    expert[25] gate_up  → RTN  (no Hessian)
+    expert[25] down     → RTN  (no Hessian)
+    expert[26] gate_up  → RTN  (no Hessian)
+    expert[26] down     → RTN  (no Hessian)
+    expert[27] gate_up  → RTN  (no Hessian)
+    expert[27] down     → RTN  (no Hessian)
+    expert[28] gate_up  → RTN  (no Hessian)
+    expert[28] down     → RTN  (no Hessian)
+    expert[29] gate_up  → RTN  (no Hessian)
+    expert[29] down     → RTN  (no Hessian)
+    expert[30] gate_up  → RTN  (no Hessian)
+    expert[30] down     → RTN  (no Hessian)
+    expert[31] gate_up  → RTN  (no Hessian)
+    expert[31] down     → RTN  (no Hessian)
+experts.gate_up=BF16, experts.down=BF16, rtn(36)
+[GPTQ] Layer 16/23: (4 attn/gate)     expert[00] gate_up  → RTN  (no Hessian)
+    expert[00] down     → RTN  (no Hessian)
+    expert[01] gate_up  → RTN  (no Hessian)
+    expert[01] down     → RTN  (no Hessian)
+    expert[02] gate_up  → RTN  (no Hessian)
+    expert[02] down     → RTN  (no Hessian)
+    expert[03] gate_up  → RTN  (no Hessian)
+    expert[03] down     → RTN  (no Hessian)
+    expert[04] gate_up  → RTN  (no Hessian)
+    expert[04] down     → RTN  (no Hessian)
+    expert[05] gate_up  → RTN  (no Hessian)
+    expert[05] down     → RTN  (no Hessian)
+    expert[06] gate_up  → RTN  (no Hessian)
+    expert[06] down     → RTN  (no Hessian)
+    expert[07] gate_up  → RTN  (no Hessian)
+    expert[07] down     → RTN  (no Hessian)
+    expert[08] gate_up  → RTN  (no Hessian)
+    expert[08] down     → RTN  (no Hessian)
+    expert[09] gate_up  → RTN  (no Hessian)
+    expert[09] down     → RTN  (no Hessian)
+    expert[10] gate_up  → RTN  (no Hessian)
+    expert[10] down     → RTN  (no Hessian)
+    expert[11] gate_up  → RTN  (no Hessian)
+    expert[11] down     → RTN  (no Hessian)
+    expert[12] gate_up  → RTN  (no Hessian)
+    expert[12] down     → RTN  (no Hessian)
+    expert[13] gate_up  → RTN  (no Hessian)
+    expert[13] down     → RTN  (no Hessian)
+    expert[14] gate_up  → RTN  (no Hessian)
+    expert[14] down     → RTN  (no Hessian)
+    expert[15] gate_up  → RTN  (no Hessian)
+    expert[15] down     → RTN  (no Hessian)
+    expert[16] gate_up  → RTN  (no Hessian)
+    expert[16] down     → RTN  (no Hessian)
+    expert[17] gate_up  → RTN  (no Hessian)
+    expert[17] down     → RTN  (no Hessian)
+    expert[18] gate_up  → RTN  (no Hessian)
+    expert[18] down     → RTN  (no Hessian)
+    expert[19] gate_up  → RTN  (no Hessian)
+    expert[19] down     → RTN  (no Hessian)
+    expert[20] gate_up  → RTN  (no Hessian)
+    expert[20] down     → RTN  (no Hessian)
+    expert[21] gate_up  → RTN  (no Hessian)
+    expert[21] down     → RTN  (no Hessian)
+    expert[22] gate_up  → RTN  (no Hessian)
+    expert[22] down     → RTN  (no Hessian)
+    expert[23] gate_up  → RTN  (no Hessian)
+    expert[23] down     → RTN  (no Hessian)
+    expert[24] gate_up  → RTN  (no Hessian)
+    expert[24] down     → RTN  (no Hessian)
+    expert[25] gate_up  → RTN  (no Hessian)
+    expert[25] down     → RTN  (no Hessian)
+    expert[26] gate_up  → RTN  (no Hessian)
+    expert[26] down     → RTN  (no Hessian)
+    expert[27] gate_up  → RTN  (no Hessian)
+    expert[27] down     → RTN  (no Hessian)
+    expert[28] gate_up  → RTN  (no Hessian)
+    expert[28] down     → RTN  (no Hessian)
+    expert[29] gate_up  → RTN  (no Hessian)
+    expert[29] down     → RTN  (no Hessian)
+    expert[30] gate_up  → RTN  (no Hessian)
+    expert[30] down     → RTN  (no Hessian)
+    expert[31] gate_up  → RTN  (no Hessian)
+    expert[31] down     → RTN  (no Hessian)
+experts.gate_up=BF16, experts.down=BF16, rtn(36)
+[GPTQ] Layer 17/23: (4 attn/gate)     expert[00] gate_up  → RTN  (no Hessian)
+    expert[00] down     → RTN  (no Hessian)
+    expert[01] gate_up  → RTN  (no Hessian)
+    expert[01] down     → RTN  (no Hessian)
+    expert[02] gate_up  → RTN  (no Hessian)
+    expert[02] down     → RTN  (no Hessian)
+    expert[03] gate_up  → RTN  (no Hessian)
+    expert[03] down     → RTN  (no Hessian)
+    expert[04] gate_up  → RTN  (no Hessian)
+    expert[04] down     → RTN  (no Hessian)
+    expert[05] gate_up  → RTN  (no Hessian)
+    expert[05] down     → RTN  (no Hessian)
+    expert[06] gate_up  → RTN  (no Hessian)
+    expert[06] down     → RTN  (no Hessian)
+    expert[07] gate_up  → RTN  (no Hessian)
+    expert[07] down     → RTN  (no Hessian)
+    expert[08] gate_up  → RTN  (no Hessian)
+    expert[08] down     → RTN  (no Hessian)
+    expert[09] gate_up  → RTN  (no Hessian)
+    expert[09] down     → RTN  (no Hessian)
+    expert[10] gate_up  → RTN  (no Hessian)
+    expert[10] down     → RTN  (no Hessian)
+    expert[11] gate_up  → RTN  (no Hessian)
+    expert[11] down     → RTN  (no Hessian)
+    expert[12] gate_up  → RTN  (no Hessian)
+    expert[12] down     → RTN  (no Hessian)
+    expert[13] gate_up  → RTN  (no Hessian)
+    expert[13] down     → RTN  (no Hessian)
+    expert[14] gate_up  → RTN  (no Hessian)
+    expert[14] down     → RTN  (no Hessian)
+    expert[15] gate_up  → RTN  (no Hessian)
+    expert[15] down     → RTN  (no Hessian)
+    expert[16] gate_up  → RTN  (no Hessian)
+    expert[16] down     → RTN  (no Hessian)
+    expert[17] gate_up  → RTN  (no Hessian)
+    expert[17] down     → RTN  (no Hessian)
+    expert[18] gate_up  → RTN  (no Hessian)
+    expert[18] down     → RTN  (no Hessian)
+    expert[19] gate_up  → RTN  (no Hessian)
+    expert[19] down     → RTN  (no Hessian)
+    expert[20] gate_up  → RTN  (no Hessian)
+    expert[20] down     → RTN  (no Hessian)
+    expert[21] gate_up  → RTN  (no Hessian)
+    expert[21] down     → RTN  (no Hessian)
+    expert[22] gate_up  → RTN  (no Hessian)
+    expert[22] down     → RTN  (no Hessian)
+    expert[23] gate_up  → RTN  (no Hessian)
+    expert[23] down     → RTN  (no Hessian)
+    expert[24] gate_up  → RTN  (no Hessian)
+    expert[24] down     → RTN  (no Hessian)
+    expert[25] gate_up  → RTN  (no Hessian)
+    expert[25] down     → RTN  (no Hessian)
+    expert[26] gate_up  → RTN  (no Hessian)
+    expert[26] down     → RTN  (no Hessian)
+    expert[27] gate_up  → RTN  (no Hessian)
+    expert[27] down     → RTN  (no Hessian)
+    expert[28] gate_up  → RTN  (no Hessian)
+    expert[28] down     → RTN  (no Hessian)
+    expert[29] gate_up  → RTN  (no Hessian)
+    expert[29] down     → RTN  (no Hessian)
+    expert[30] gate_up  → RTN  (no Hessian)
+    expert[30] down     → RTN  (no Hessian)
+    expert[31] gate_up  → RTN  (no Hessian)
+    expert[31] down     → RTN  (no Hessian)
+experts.gate_up=BF16, experts.down=BF16, rtn(36)
+[GPTQ] Layer 18/23: (4 attn/gate)     expert[00] gate_up  → RTN  (no Hessian)
+    expert[00] down     → RTN  (no Hessian)
+    expert[01] gate_up  → RTN  (no Hessian)
+    expert[01] down     → RTN  (no Hessian)
+    expert[02] gate_up  → RTN  (no Hessian)
+    expert[02] down     → RTN  (no Hessian)
+    expert[03] gate_up  → RTN  (no Hessian)
+    expert[03] down     → RTN  (no Hessian)
+    expert[04] gate_up  → RTN  (no Hessian)
+    expert[04] down     → RTN  (no Hessian)
+    expert[05] gate_up  → RTN  (no Hessian)
+    expert[05] down     → RTN  (no Hessian)
+    expert[06] gate_up  → RTN  (no Hessian)
+    expert[06] down     → RTN  (no Hessian)
+    expert[07] gate_up  → RTN  (no Hessian)
+    expert[07] down     → RTN  (no Hessian)
+    expert[08] gate_up  → RTN  (no Hessian)
+    expert[08] down     → RTN  (no Hessian)
+    expert[09] gate_up  → RTN  (no Hessian)
+    expert[09] down     → RTN  (no Hessian)
+    expert[10] gate_up  → RTN  (no Hessian)
+    expert[10] down     → RTN  (no Hessian)
+    expert[11] gate_up  → RTN  (no Hessian)
+    expert[11] down     → RTN  (no Hessian)
+    expert[12] gate_up  → RTN  (no Hessian)
+    expert[12] down     → RTN  (no Hessian)
+    expert[13] gate_up  → RTN  (no Hessian)
+    expert[13] down     → RTN  (no Hessian)
+    expert[14] gate_up  → RTN  (no Hessian)
+    expert[14] down     → RTN  (no Hessian)
+    expert[15] gate_up  → RTN  (no Hessian)
+    expert[15] down     → RTN  (no Hessian)
+    expert[16] gate_up  → RTN  (no Hessian)
+    expert[16] down     → RTN  (no Hessian)
+    expert[17] gate_up  → RTN  (no Hessian)
+    expert[17] down     → RTN  (no Hessian)
+    expert[18] gate_up  → RTN  (no Hessian)
+    expert[18] down     → RTN  (no Hessian)
+    expert[19] gate_up  → RTN  (no Hessian)
+    expert[19] down     → RTN  (no Hessian)
+    expert[20] gate_up  → RTN  (no Hessian)
+    expert[20] down     → RTN  (no Hessian)
+    expert[21] gate_up  → RTN  (no Hessian)
+    expert[21] down     → RTN  (no Hessian)
+    expert[22] gate_up  → RTN  (no Hessian)
+    expert[22] down     → RTN  (no Hessian)
+    expert[23] gate_up  → RTN  (no Hessian)
+    expert[23] down     → RTN  (no Hessian)
+    expert[24] gate_up  → RTN  (no Hessian)
+    expert[24] down     → RTN  (no Hessian)
+    expert[25] gate_up  → RTN  (no Hessian)
+    expert[25] down     → RTN  (no Hessian)
+    expert[26] gate_up  → RTN  (no Hessian)
+    expert[26] down     → RTN  (no Hessian)
+    expert[27] gate_up  → RTN  (no Hessian)
+    expert[27] down     → RTN  (no Hessian)
+    expert[28] gate_up  → RTN  (no Hessian)
+    expert[28] down     → RTN  (no Hessian)
+    expert[29] gate_up  → RTN  (no Hessian)
+    expert[29] down     → RTN  (no Hessian)
+    expert[30] gate_up  → RTN  (no Hessian)
+    expert[30] down     → RTN  (no Hessian)
+    expert[31] gate_up  → RTN  (no Hessian)
+    expert[31] down     → RTN  (no Hessian)
+experts.gate_up=BF16, experts.down=BF16, rtn(36)
+[GPTQ] Layer 19/23: (4 attn/gate)     expert[00] gate_up  → RTN  (no Hessian)
+    expert[00] down     → RTN  (no Hessian)
+    expert[01] gate_up  → RTN  (no Hessian)
+    expert[01] down     → RTN  (no Hessian)
+    expert[02] gate_up  → RTN  (no Hessian)
+    expert[02] down     → RTN  (no Hessian)
+    expert[03] gate_up  → RTN  (no Hessian)
+    expert[03] down     → RTN  (no Hessian)
+    expert[04] gate_up  → RTN  (no Hessian)
+    expert[04] down     → RTN  (no Hessian)
+    expert[05] gate_up  → RTN  (no Hessian)
+    expert[05] down     → RTN  (no Hessian)
+    expert[06] gate_up  → RTN  (no Hessian)
+    expert[06] down     → RTN  (no Hessian)
+    expert[07] gate_up  → RTN  (no Hessian)
+    expert[07] down     → RTN  (no Hessian)
+    expert[08] gate_up  → RTN  (no Hessian)
+    expert[08] down     → RTN  (no Hessian)
+    expert[09] gate_up  → RTN  (no Hessian)
+    expert[09] down     → RTN  (no Hessian)
+    expert[10] gate_up  → RTN  (no Hessian)
+    expert[10] down     → RTN  (no Hessian)
+    expert[11] gate_up  → RTN  (no Hessian)
+    expert[11] down     → RTN  (no Hessian)
+    expert[12] gate_up  → RTN  (no Hessian)
+    expert[12] down     → RTN  (no Hessian)
+    expert[13] gate_up  → RTN  (no Hessian)
+    expert[13] down     → RTN  (no Hessian)
+    expert[14] gate_up  → RTN  (no Hessian)
+    expert[14] down     → RTN  (no Hessian)
+    expert[15] gate_up  → RTN  (no Hessian)
+    expert[15] down     → RTN  (no Hessian)
+    expert[16] gate_up  → RTN  (no Hessian)
+    expert[16] down     → RTN  (no Hessian)
+    expert[17] gate_up  → RTN  (no Hessian)
+    expert[17] down     → RTN  (no Hessian)
+    expert[18] gate_up  → RTN  (no Hessian)
+    expert[18] down     → RTN  (no Hessian)
+    expert[19] gate_up  → RTN  (no Hessian)
+    expert[19] down     → RTN  (no Hessian)
+    expert[20] gate_up  → RTN  (no Hessian)
+    expert[20] down     → RTN  (no Hessian)
+    expert[21] gate_up  → RTN  (no Hessian)
+    expert[21] down     → RTN  (no Hessian)
+    expert[22] gate_up  → RTN  (no Hessian)
+    expert[22] down     → RTN  (no Hessian)
+    expert[23] gate_up  → RTN  (no Hessian)
+    expert[23] down     → RTN  (no Hessian)
+    expert[24] gate_up  → RTN  (no Hessian)
+    expert[24] down     → RTN  (no Hessian)
+    expert[25] gate_up  → RTN  (no Hessian)
+    expert[25] down     → RTN  (no Hessian)
+    expert[26] gate_up  → RTN  (no Hessian)
+    expert[26] down     → RTN  (no Hessian)
+    expert[27] gate_up  → RTN  (no Hessian)
+    expert[27] down     → RTN  (no Hessian)
+    expert[28] gate_up  → RTN  (no Hessian)
+    expert[28] down     → RTN  (no Hessian)
+    expert[29] gate_up  → RTN  (no Hessian)
+    expert[29] down     → RTN  (no Hessian)
+    expert[30] gate_up  → RTN  (no Hessian)
+    expert[30] down     → RTN  (no Hessian)
+    expert[31] gate_up  → RTN  (no Hessian)
+    expert[31] down     → RTN  (no Hessian)
+experts.gate_up=BF16, experts.down=BF16, rtn(36)
+[GPTQ] Layer 20/23: (4 attn/gate)     expert[00] gate_up  → RTN  (no Hessian)
+    expert[00] down     → RTN  (no Hessian)
+    expert[01] gate_up  → RTN  (no Hessian)
+    expert[01] down     → RTN  (no Hessian)
+    expert[02] gate_up  → RTN  (no Hessian)
+    expert[02] down     → RTN  (no Hessian)
+    expert[03] gate_up  → RTN  (no Hessian)
+    expert[03] down     → RTN  (no Hessian)
+    expert[04] gate_up  → RTN  (no Hessian)
+    expert[04] down     → RTN  (no Hessian)
+    expert[05] gate_up  → RTN  (no Hessian)
+    expert[05] down     → RTN  (no Hessian)
+    expert[06] gate_up  → RTN  (no Hessian)
+    expert[06] down     → RTN  (no Hessian)
+    expert[07] gate_up  → RTN  (no Hessian)
+    expert[07] down     → RTN  (no Hessian)
+    expert[08] gate_up  → RTN  (no Hessian)
+    expert[08] down     → RTN  (no Hessian)
+    expert[09] gate_up  → RTN  (no Hessian)
+    expert[09] down     → RTN  (no Hessian)
+    expert[10] gate_up  → RTN  (no Hessian)
+    expert[10] down     → RTN  (no Hessian)
+    expert[11] gate_up  → RTN  (no Hessian)
+    expert[11] down     → RTN  (no Hessian)
+    expert[12] gate_up  → RTN  (no Hessian)
+    expert[12] down     → RTN  (no Hessian)
+    expert[13] gate_up  → RTN  (no Hessian)
+    expert[13] down     → RTN  (no Hessian)
+    expert[14] gate_up  → RTN  (no Hessian)
+    expert[14] down     → RTN  (no Hessian)
+    expert[15] gate_up  → RTN  (no Hessian)
+    expert[15] down     → RTN  (no Hessian)
+    expert[16] gate_up  → RTN  (no Hessian)
+    expert[16] down     → RTN  (no Hessian)
+    expert[17] gate_up  → RTN  (no Hessian)
+    expert[17] down     → RTN  (no Hessian)
+    expert[18] gate_up  → RTN  (no Hessian)
+    expert[18] down     → RTN  (no Hessian)
+    expert[19] gate_up  → RTN  (no Hessian)
+    expert[19] down     → RTN  (no Hessian)
+    expert[20] gate_up  → RTN  (no Hessian)
+    expert[20] down     → RTN  (no Hessian)
+    expert[21] gate_up  → RTN  (no Hessian)
+    expert[21] down     → RTN  (no Hessian)
+    expert[22] gate_up  → RTN  (no Hessian)
+    expert[22] down     → RTN  (no Hessian)
+    expert[23] gate_up  → RTN  (no Hessian)
+    expert[23] down     → RTN  (no Hessian)
+    expert[24] gate_up  → RTN  (no Hessian)
+    expert[24] down     → RTN  (no Hessian)
+    expert[25] gate_up  → RTN  (no Hessian)
+    expert[25] down     → RTN  (no Hessian)
+    expert[26] gate_up  → RTN  (no Hessian)
+    expert[26] down     → RTN  (no Hessian)
+    expert[27] gate_up  → RTN  (no Hessian)
+    expert[27] down     → RTN  (no Hessian)
+    expert[28] gate_up  → RTN  (no Hessian)
+    expert[28] down     → RTN  (no Hessian)
+    expert[29] gate_up  → RTN  (no Hessian)
+    expert[29] down     → RTN  (no Hessian)
+    expert[30] gate_up  → RTN  (no Hessian)
+    expert[30] down     → RTN  (no Hessian)
+    expert[31] gate_up  → RTN  (no Hessian)
+    expert[31] down     → RTN  (no Hessian)
+experts.gate_up=BF16, experts.down=BF16, rtn(36)
+[GPTQ] Layer 21/23: (4 attn/gate)     expert[00] gate_up  → RTN  (no Hessian)
+    expert[00] down     → RTN  (no Hessian)
+    expert[01] gate_up  → RTN  (no Hessian)
+    expert[01] down     → RTN  (no Hessian)
+    expert[02] gate_up  → RTN  (no Hessian)
+    expert[02] down     → RTN  (no Hessian)
+    expert[03] gate_up  → RTN  (no Hessian)
+    expert[03] down     → RTN  (no Hessian)
+    expert[04] gate_up  → RTN  (no Hessian)
+    expert[04] down     → RTN  (no Hessian)
+    expert[05] gate_up  → RTN  (no Hessian)
+    expert[05] down     → RTN  (no Hessian)
+    expert[06] gate_up  → RTN  (no Hessian)
+    expert[06] down     → RTN  (no Hessian)
+    expert[07] gate_up  → RTN  (no Hessian)
+    expert[07] down     → RTN  (no Hessian)
+    expert[08] gate_up  → RTN  (no Hessian)
+    expert[08] down     → RTN  (no Hessian)
+    expert[09] gate_up  → RTN  (no Hessian)
+    expert[09] down     → RTN  (no Hessian)
+    expert[10] gate_up  → RTN  (no Hessian)
+    expert[10] down     → RTN  (no Hessian)
+    expert[11] gate_up  → RTN  (no Hessian)
+    expert[11] down     → RTN  (no Hessian)
+    expert[12] gate_up  → RTN  (no Hessian)
+    expert[12] down     → RTN  (no Hessian)
+    expert[13] gate_up  → RTN  (no Hessian)
+    expert[13] down     → RTN  (no Hessian)
+    expert[14] gate_up  → RTN  (no Hessian)
+    expert[14] down     → RTN  (no Hessian)
+    expert[15] gate_up  → RTN  (no Hessian)
+    expert[15] down     → RTN  (no Hessian)
+    expert[16] gate_up  → RTN  (no Hessian)
+    expert[16] down     → RTN  (no Hessian)
+    expert[17] gate_up  → RTN  (no Hessian)
+    expert[17] down     → RTN  (no Hessian)
+    expert[18] gate_up  → RTN  (no Hessian)
+    expert[18] down     → RTN  (no Hessian)
+    expert[19] gate_up  → RTN  (no Hessian)
+    expert[19] down     → RTN  (no Hessian)
+    expert[20] gate_up  → RTN  (no Hessian)
+    expert[20] down     → RTN  (no Hessian)
+    expert[21] gate_up  → RTN  (no Hessian)
+    expert[21] down     → RTN  (no Hessian)
+    expert[22] gate_up  → RTN  (no Hessian)
+    expert[22] down     → RTN  (no Hessian)
+    expert[23] gate_up  → RTN  (no Hessian)
+    expert[23] down     → RTN  (no Hessian)
+    expert[24] gate_up  → RTN  (no Hessian)
+    expert[24] down     → RTN  (no Hessian)
+    expert[25] gate_up  → RTN  (no Hessian)
+    expert[25] down     → RTN  (no Hessian)
+    expert[26] gate_up  → RTN  (no Hessian)
+    expert[26] down     → RTN  (no Hessian)
+    expert[27] gate_up  → RTN  (no Hessian)
+    expert[27] down     → RTN  (no Hessian)
+    expert[28] gate_up  → RTN  (no Hessian)
+    expert[28] down     → RTN  (no Hessian)
+    expert[29] gate_up  → RTN  (no Hessian)
+    expert[29] down     → RTN  (no Hessian)
+    expert[30] gate_up  → RTN  (no Hessian)
+    expert[30] down     → RTN  (no Hessian)
+    expert[31] gate_up  → RTN  (no Hessian)
+    expert[31] down     → RTN  (no Hessian)
+experts.gate_up=BF16, experts.down=BF16, rtn(36)
+[GPTQ] Layer 22/23: (4 attn/gate)     expert[00] gate_up  → RTN  (no Hessian)
+    expert[00] down     → RTN  (no Hessian)
+    expert[01] gate_up  → RTN  (no Hessian)
+    expert[01] down     → RTN  (no Hessian)
+    expert[02] gate_up  → RTN  (no Hessian)
+    expert[02] down     → RTN  (no Hessian)
+    expert[03] gate_up  → RTN  (no Hessian)
+    expert[03] down     → RTN  (no Hessian)
+    expert[04] gate_up  → RTN  (no Hessian)
+    expert[04] down     → RTN  (no Hessian)
+    expert[05] gate_up  → RTN  (no Hessian)
+    expert[05] down     → RTN  (no Hessian)
+    expert[06] gate_up  → RTN  (no Hessian)
+    expert[06] down     → RTN  (no Hessian)
+    expert[07] gate_up  → RTN  (no Hessian)
+    expert[07] down     → RTN  (no Hessian)
+    expert[08] gate_up  → RTN  (no Hessian)
+    expert[08] down     → RTN  (no Hessian)
+    expert[09] gate_up  → RTN  (no Hessian)
+    expert[09] down     → RTN  (no Hessian)
+    expert[10] gate_up  → RTN  (no Hessian)
+    expert[10] down     → RTN  (no Hessian)
+    expert[11] gate_up  → RTN  (no Hessian)
+    expert[11] down     → RTN  (no Hessian)
+    expert[12] gate_up  → RTN  (no Hessian)
+    expert[12] down     → RTN  (no Hessian)
+    expert[13] gate_up  → RTN  (no Hessian)
+    expert[13] down     → RTN  (no Hessian)
+    expert[14] gate_up  → RTN  (no Hessian)
+    expert[14] down     → RTN  (no Hessian)
+    expert[15] gate_up  → RTN  (no Hessian)
+    expert[15] down     → RTN  (no Hessian)
+    expert[16] gate_up  → RTN  (no Hessian)
+    expert[16] down     → RTN  (no Hessian)
+    expert[17] gate_up  → RTN  (no Hessian)
+    expert[17] down     → RTN  (no Hessian)
+    expert[18] gate_up  → RTN  (no Hessian)
+    expert[18] down     → RTN  (no Hessian)
+    expert[19] gate_up  → RTN  (no Hessian)
+    expert[19] down     → RTN  (no Hessian)
+    expert[20] gate_up  → RTN  (no Hessian)
+    expert[20] down     → RTN  (no Hessian)
+    expert[21] gate_up  → RTN  (no Hessian)
+    expert[21] down     → RTN  (no Hessian)
+    expert[22] gate_up  → RTN  (no Hessian)
+    expert[22] down     → RTN  (no Hessian)
+    expert[23] gate_up  → RTN  (no Hessian)
+    expert[23] down     → RTN  (no Hessian)
+    expert[24] gate_up  → RTN  (no Hessian)
+    expert[24] down     → RTN  (no Hessian)
+    expert[25] gate_up  → RTN  (no Hessian)
+    expert[25] down     → RTN  (no Hessian)
+    expert[26] gate_up  → RTN  (no Hessian)
+    expert[26] down     → RTN  (no Hessian)
+    expert[27] gate_up  → RTN  (no Hessian)
+    expert[27] down     → RTN  (no Hessian)
+    expert[28] gate_up  → RTN  (no Hessian)
+    expert[28] down     → RTN  (no Hessian)
+    expert[29] gate_up  → RTN  (no Hessian)
+    expert[29] down     → RTN  (no Hessian)
+    expert[30] gate_up  → RTN  (no Hessian)
+    expert[30] down     → RTN  (no Hessian)
+    expert[31] gate_up  → RTN  (no Hessian)
+    expert[31] down     → RTN  (no Hessian)
+experts.gate_up=BF16, experts.down=BF16, rtn(36)
+[GPTQ] Layer 23/23: (4 attn/gate)     expert[00] gate_up  → RTN  (no Hessian)
+    expert[00] down     → RTN  (no Hessian)
+    expert[01] gate_up  → RTN  (no Hessian)
+    expert[01] down     → RTN  (no Hessian)
+    expert[02] gate_up  → RTN  (no Hessian)
+    expert[02] down     → RTN  (no Hessian)
+    expert[03] gate_up  → RTN  (no Hessian)
+    expert[03] down     → RTN  (no Hessian)
+    expert[04] gate_up  → RTN  (no Hessian)
+    expert[04] down     → RTN  (no Hessian)
+    expert[05] gate_up  → RTN  (no Hessian)
+    expert[05] down     → RTN  (no Hessian)
+    expert[06] gate_up  → RTN  (no Hessian)
+    expert[06] down     → RTN  (no Hessian)
+    expert[07] gate_up  → RTN  (no Hessian)
+    expert[07] down     → RTN  (no Hessian)
+    expert[08] gate_up  → RTN  (no Hessian)
+    expert[08] down     → RTN  (no Hessian)
+    expert[09] gate_up  → RTN  (no Hessian)
+    expert[09] down     → RTN  (no Hessian)
+    expert[10] gate_up  → RTN  (no Hessian)
+    expert[10] down     → RTN  (no Hessian)
+    expert[11] gate_up  → RTN  (no Hessian)
+    expert[11] down     → RTN  (no Hessian)
+    expert[12] gate_up  → RTN  (no Hessian)
+    expert[12] down     → RTN  (no Hessian)
+    expert[13] gate_up  → RTN  (no Hessian)
+    expert[13] down     → RTN  (no Hessian)
+    expert[14] gate_up  → RTN  (no Hessian)
+    expert[14] down     → RTN  (no Hessian)
+    expert[15] gate_up  → RTN  (no Hessian)
+    expert[15] down     → RTN  (no Hessian)
+    expert[16] gate_up  → RTN  (no Hessian)
+    expert[16] down     → RTN  (no Hessian)
+    expert[17] gate_up  → RTN  (no Hessian)
+    expert[17] down     → RTN  (no Hessian)
+    expert[18] gate_up  → RTN  (no Hessian)
+    expert[18] down     → RTN  (no Hessian)
+    expert[19] gate_up  → RTN  (no Hessian)
+    expert[19] down     → RTN  (no Hessian)
+    expert[20] gate_up  → RTN  (no Hessian)
+    expert[20] down     → RTN  (no Hessian)
+    expert[21] gate_up  → RTN  (no Hessian)
+    expert[21] down     → RTN  (no Hessian)
+    expert[22] gate_up  → RTN  (no Hessian)
+    expert[22] down     → RTN  (no Hessian)
+    expert[23] gate_up  → RTN  (no Hessian)
+    expert[23] down     → RTN  (no Hessian)
+    expert[24] gate_up  → RTN  (no Hessian)
+    expert[24] down     → RTN  (no Hessian)
+    expert[25] gate_up  → RTN  (no Hessian)
+    expert[25] down     → RTN  (no Hessian)
+    expert[26] gate_up  → RTN  (no Hessian)
+    expert[26] down     → RTN  (no Hessian)
+    expert[27] gate_up  → RTN  (no Hessian)
+    expert[27] down     → RTN  (no Hessian)
+    expert[28] gate_up  → RTN  (no Hessian)
+    expert[28] down     → RTN  (no Hessian)
+    expert[29] gate_up  → RTN  (no Hessian)
+    expert[29] down     → RTN  (no Hessian)
+    expert[30] gate_up  → RTN  (no Hessian)
+    expert[30] down     → RTN  (no Hessian)
+    expert[31] gate_up  → RTN  (no Hessian)
+    expert[31] down     → RTN  (no Hessian)
+experts.gate_up=BF16, experts.down=BF16, rtn(36)
+
+========================================================================
+[GPTQ] Quantization Summary
+========================================================================
+  Category                    Total    NVFP4     BF16    RTN
+  -------------------------- ------ -------- -------- ------
+  Attention sublayers            96     4 ( 4.2%)     0 ( 0.0%)   92
+  Expert gate_up                768     5 ( 0.7%)     0 ( 0.0%)  763
+  Expert down_proj              768     5 ( 0.7%)     0 ( 0.0%)  763
+  -------------------------- ------ -------- -------- ------
+  TOTAL                        1632    14 ( 0.9%)     0 ( 0.0%) 1618
+========================================================================
+
+
+  Total GPTQ loss      : 84.0194
+  Quantization time    : 1.7 min
+
+Saving to models/gpt-oss-20b-BF16-NVFP4-wikitext2-fixed ...
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:18<00:00, 18.39s/it]Writing model shards: 100%|██████████| 1/1 [00:18<00:00, 18.39s/it]
+  Saved in 18.7 s
+  Results written to /workspace/blockwise-gptq-main/results/stage5_gpt-oss-20b-BF16_nvfp4_quantize.json
+
+====================================================================
+Stage 5 summary — gpt-oss-20b-BF16 → NVFP4
+====================================================================
+  GPTQ loss (total)  : 84.0194
+  Blocksize used     : 128
+  Calibration        : wikitext2, 512 samples
+  Quantization time  : 1.7 min
+  Quantized model    : models/gpt-oss-20b-BF16-NVFP4-wikitext2-fixed
+
+✓  Model quantized. Run Stage 6 to evaluate perplexity.

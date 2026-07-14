@@ -1,0 +1,59 @@
+nohup: ignoring input
+════════════════════════════════════════════════════════════════════
+NVFP4 vs BF16 Benchmark
+════════════════════════════════════════════════════════════════════
+  BF16  model : models/gpt-oss-20b-BF16
+  NVFP4 model : models/gpt-oss-20b-BF16-NVFP4-wikitext2-modelopt
+  max_model_len               : 2048
+  gpu_memory_utilization      : 0.88
+  enforce_eager               : True
+  n_runs                      : 5
+  n_warmup                    : 2
+  max_new_tokens              : 80
+  skip_quality                : False
+  skip_throughput             : False
+  skip_ttft                   : False
+
+────────────────────────────────────────────────────────────
+Running BF16 benchmark in subprocess …
+  Model: models/gpt-oss-20b-BF16
+/workspace/blockwise-gptq-main/.venv/lib/python3.12/site-packages/huggingface_hub/constants.py:298: FutureWarning: The `HF_HUB_ENABLE_HF_TRANSFER` environment variable is deprecated as 'hf_transfer' is not used anymore. Please use `HF_XET_HIGH_PERFORMANCE` instead to enable high performance transfer with Xet. Visit https://huggingface.co/docs/huggingface_hub/package_reference/environment_variables#hfxethighperformance for more details.
+  warnings.warn(
+Traceback (most recent call last):
+  File "<string>", line 8, in <module>
+  File "/workspace/blockwise-gptq-main/.venv/lib/python3.12/site-packages/vllm/__init__.py", line 70, in __getattr__
+    module = import_module(module_name, __package__)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/blockwise-gptq-main/.venv/lib/python3.12/site-packages/vllm/entrypoints/llm.py", line 42, in <module>
+    from vllm.entrypoints.pooling.offline import PoolingOfflineMixin
+  File "/workspace/blockwise-gptq-main/.venv/lib/python3.12/site-packages/vllm/entrypoints/pooling/offline.py", line 23, in <module>
+    from .factories import init_pooling_io_processors
+  File "/workspace/blockwise-gptq-main/.venv/lib/python3.12/site-packages/vllm/entrypoints/pooling/factories.py", line 15, in <module>
+    from .base.io_processor import PoolingIOProcessor
+  File "/workspace/blockwise-gptq-main/.venv/lib/python3.12/site-packages/vllm/entrypoints/pooling/base/io_processor.py", line 19, in <module>
+    from vllm.tool_parsers import ToolParser
+  File "/workspace/blockwise-gptq-main/.venv/lib/python3.12/site-packages/vllm/tool_parsers/__init__.py", line 4, in <module>
+    from vllm.tool_parsers.abstract_tool_parser import (
+  File "/workspace/blockwise-gptq-main/.venv/lib/python3.12/site-packages/vllm/tool_parsers/abstract_tool_parser.py", line 34, in <module>
+    from vllm.tool_parsers.utils import Tool, get_json_schema_from_tools
+  File "/workspace/blockwise-gptq-main/.venv/lib/python3.12/site-packages/vllm/tool_parsers/utils.py", line 13, in <module>
+    from openai.types.responses import (
+ImportError: cannot import name 'NamespaceTool' from 'openai.types.responses' (/workspace/blockwise-gptq-main/.venv/lib/python3.12/site-packages/openai/types/responses/__init__.py)
+
+================================================================================ SUBPROCESS ERROR ================================================================================
+STDERR:
+None
+================================================================================================================================================================================
+
+Traceback (most recent call last):
+  File "/workspace/blockwise-gptq-main/tests/stage8_benchmark_nvfp4_vs_bf16.py", line 349, in <module>
+    main()
+  File "/workspace/blockwise-gptq-main/tests/stage8_benchmark_nvfp4_vs_bf16.py", line 341, in main
+    bf16_results  = run_in_subprocess(args.bf16_model,  args_dict, "BF16")
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/blockwise-gptq-main/tests/stage8_benchmark_nvfp4_vs_bf16.py", line 183, in run_in_subprocess
+    raise subprocess.CalledProcessError(proc.returncode, proc.args)
+subprocess.CalledProcessError: Command '['/workspace/blockwise-gptq-main/.venv/bin/python', '-c', '\nimport json, time, sys\nfrom pathlib import Path\n\nQUALITY_PROMPTS    = [\'The capital of France is\', \'2 + 2 =\', \'def fibonacci(n):\\n    \', \'The largest planet in the solar system is\', \'The speed of light in a vacuum is approximately\', \'In Python, a list comprehension that squares numbers 1-10 is:\']\nTHROUGHPUT_PROMPTS = [\'Explain the theory of general relativity in simple terms.\', \'What are the main differences between supervised and unsupervised learning?\', \'Write a Python function that checks if a string is a palindrome.\', \'Describe the water cycle and its importance to the ecosystem.\', \'What is the difference between a list and a tuple in Python?\', \'Explain how transformers work in natural language processing.\', \'What are the SOLID principles in software engineering?\', \'Write a SQL query to find the top 5 highest-paid employees.\']\n\nfrom vllm import LLM, SamplingParams\n\nmodel_path = \'models/gpt-oss-20b-BF16\'\nout_json   = \'/tmp/tmpz5su12b3.json\'\nargs_dict  = {\'max_model_len\': 2048, \'gpu_memory_utilization\': 0.88, \'enforce_eager\': True, \'n_runs\': 5, \'n_warmup\': 2, \'max_new_tokens\': 80, \'skip_quality\': False, \'skip_throughput\': False, \'skip_ttft\': False}\n\nllm = LLM(\n    model=model_path,\n    trust_remote_code=True,\n    max_model_len=args_dict["max_model_len"],\n    gpu_memory_utilization=args_dict["gpu_memory_utilization"],\n    enforce_eager=args_dict["enforce_eager"],\n    disable_log_stats=True,\n)\n\nresults = {"peak_mem_gb": 0.0, "quality": [], "throughput": [], "ttft_ms": None}\n\ngreedy  = SamplingParams(temperature=0.0, max_tokens=args_dict["max_new_tokens"])\ngreedy1 = SamplingParams(temperature=0.0, max_tokens=1)\nn_w, n_r = args_dict["n_warmup"], args_dict["n_runs"]\n\nif not args_dict["skip_quality"]:\n    outs = llm.generate(QUALITY_PROMPTS, greedy, use_tqdm=False)\n    results["quality"] = [o.outputs[0].text for o in outs]\n\nif not args_dict["skip_ttft"]:\n    for _ in range(n_w):\n        llm.generate([THROUGHPUT_PROMPTS[0]], greedy1, use_tqdm=False)\n    t0 = time.perf_counter()\n    for _ in range(n_r):\n        llm.generate([THROUGHPUT_PROMPTS[0]], greedy1, use_tqdm=False)\n    results["ttft_ms"] = (time.perf_counter() - t0) / n_r * 1000\n\nif not args_dict["skip_throughput"]:\n    for bs in [1, 4, 8]:\n        prompts = THROUGHPUT_PROMPTS[:bs]\n        for _ in range(n_w):\n            llm.generate(prompts, greedy, use_tqdm=False)\n        t0 = time.perf_counter()\n        for _ in range(n_r):\n            outs = llm.generate(prompts, greedy, use_tqdm=False)\n        elapsed = (time.perf_counter() - t0) / n_r\n        total_out = sum(len(o.outputs[0].token_ids) for o in outs)\n        results["throughput"].append({\n            "batch_size": bs,\n            "decode_tps": total_out / elapsed,\n            "elapsed_s": elapsed,\n        })\n\nPath(out_json).write_text(json.dumps(results, indent=2))\n']' returned non-zero exit status 1.

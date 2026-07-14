@@ -1,0 +1,32 @@
+{
+  "stage": "6_nvfp4_eval",
+  "model": "gpt-oss-20b-BF16-NVFP4-wikitext2-fixed",
+  "model_path": "models/gpt-oss-20b-BF16-NVFP4-wikitext2-fixed",
+  "bf16_stem": "gpt-oss-20b-BF16-NVFP4-wikitext2-fixed",
+  "quant_format": "nvfp4",
+  "seq_len": 2048,
+  "timestamp": "2026-07-14T21:28:26.500595+00:00",
+  "baseline_path": "results/stage4_gpt-oss-20b-BF16_baseline.json",
+  "wikitext2": {
+    "ppl_nvfp4": 220.293171,
+    "ppl_bf16": 226.792657,
+    "delta_ppl": -6.499486,
+    "avg_nll": 5.394959,
+    "n_tokens": 286720,
+    "n_windows": 140,
+    "elapsed_s": 37.97
+  },
+  "c4": {
+    "ppl_nvfp4": 574.880102,
+    "ppl_bf16": 708.93536,
+    "delta_ppl": -134.055258,
+    "avg_nll": 6.354162,
+    "n_tokens": 131072,
+    "n_windows": 64,
+    "elapsed_s": 16.89
+  },
+  "thresholds": {
+    "warn_delta_wt2": 1.5,
+    "warn_delta_c4": 2.0
+  }
+}

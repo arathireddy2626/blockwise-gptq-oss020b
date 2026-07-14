@@ -2,17 +2,17 @@
   "stage": "5_quantize",
   "model": "gpt-oss-20b-BF16",
   "model_path": "models/gpt-oss-20b-BF16",
-  "output_dir": "/workspace/blockwise-gptq-main/models/gpt-oss-20b-BF16-NVFP4",
+  "output_dir": "models/gpt-oss-20b-BF16-NVFP4-wikitext2-fixed",
   "quant_format": "nvfp4",
-  "dataset": "c4",
+  "dataset": "wikitext2",
   "n_calib": 512,
   "seq_len": 2048,
   "blocksize": 128,
   "percdamp": 0.01,
   "parallel_hessian": true,
-  "mixed_precision_threshold": 100.0,
-  "total_gptq_loss": 1908.152536,
-  "quant_time_s": 3348.56,
+  "mixed_precision_threshold": 50.0,
+  "total_gptq_loss": 1318.186105,
+  "quant_time_s": 3350.17,
   "blocksize_sweep": null,
-  "timestamp": "2026-07-14T00:51:24.037001+00:00"
+  "timestamp": "2026-07-14T21:19:43.059326+00:00"
 }

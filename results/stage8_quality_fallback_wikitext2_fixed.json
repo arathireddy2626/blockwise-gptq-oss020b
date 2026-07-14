@@ -1,0 +1,78 @@
+{
+  "model_path": "models/gpt-oss-20b-BF16-NVFP4-wikitext2-fixed",
+  "load_time_s": 8.440763963386416,
+  "quality_prompts": [
+    {
+      "prompt": "The capital of France is",
+      "output": "The capital of France is Paris.\"\n\nSure! Here's a simple example of a Python program that uses a dictionary to store and retrieve information about the capital of France:\n\n```python\n# Define a dictionary to store information about the capital of France\ncapital_info = {\n    \"country\": \"France\",\n    \"capital\": \"Paris\",\n    \"population\": 2148000,\n    \"area\": 105.4\n",
+      "gen_time_s": 2.930265978910029
+    },
+    {
+      "prompt": "2 + 2 =",
+      "output": "2 + 2 = 4\n\n- 4 + 2 = 6\n\n- 6 + 2 = 8\n\n- 8 + 2 = 10\n\n- 10 + 2 = 12\n\n- 12 + 2 = 14\n\n- 14 + 2 = 16\n\n- 16 + 2 = 18\n\n- 18 + 2 =",
+      "gen_time_s": 1.9834675481542945
+    },
+    {
+      "prompt": "def fibonacci(n):\n    ",
+      "output": "def fibonacci(n):\n     if n <= 1:\n         return n\n     else:\n         return fibonacci(n-1) + fibonacci(n-2)\n```\n\nBut the code is not exactly that. The code uses `if n <= 1: return n` and then `return fibonacci(n-1) + fibonacci(n-2)`. That is the standard recursive Fibonacci. But the code is not exactly that because",
+      "gen_time_s": 1.9465322764590383
+    },
+    {
+      "prompt": "The largest planet in the solar system is",
+      "output": "The largest planet in the solar system is Jupiter.\n\nThe statement \"The largest planet in the solar system is Jupiter\" is true.\n\nThe statement \"The largest planet in the solar system\" is not a complete sentence.\n\nThe statement \"The largest planet in the solar system\" is not a complete sentence.\n\nThe statement \"The largest planet in the solar system\" is not a complete sentence.\n\nThe statement \"The largest planet",
+      "gen_time_s": 2.0986746959388256
+    },
+    {
+      "prompt": "The speed of light in a vacuum is approximately",
+      "output": "The speed of light in a vacuum is approximately 299,792,458 meters per second.\n\nThe speed of light in a vacuum is approximately 299,792,458 meters per second.\n\nYes, that is correct. The speed of light in a vacuum is a fundamental constant of the universe and is often denoted by the symbol \"c\".\n\nYes, that is correct. The speed of light in a vacuum\n\nYes, that",
+      "gen_time_s": 1.9038569256663322
+    },
+    {
+      "prompt": "In Python, a list comprehension that squares numbers 1-10 is:",
+      "output": "In Python, a list comprehension that squares numbers 1-10 is: `[x**2 for x in range(1, 11)]`. This creates a new list of the squares of the numbers 1 through 10. The `range(1, 11)` function generates numbers from 1 to 10, and `x**2` squares each number. The list comprehension then collects these squares into a new list. This is a concise and efficient way",
+      "gen_time_s": 1.7399591337889433
+    }
+  ],
+  "throughput_prompts": [
+    {
+      "prompt": "Explain the theory of general relativity in simple terms.",
+      "output": "Explain the theory of general relativity in simple terms.\n\nGeneral relativity is a theory of gravity that was developed by Albert Einstein in the early 20th century. It is based on the idea that the force of gravity is not a force in the traditional sense, but rather a curvature of space and time caused by the presence of mass and energy.\n\nIn general relativity, the presence of mass and energy causes the space-time around it to curve,",
+      "gen_time_s": 2.0423080809414387
+    },
+    {
+      "prompt": "What are the main differences between supervised and unsupervised learning?",
+      "output": "What are the main differences between supervised and unsupervised learning?**\n\nSupervised learning involves training a model on a labeled dataset, where the input data is paired with the correct output. The model learns to predict the output from the input data. Unsupervised learning, on the other hand, involves training a model on a dataset without labeled outputs. The model learns to identify patterns or structure in the data.\n\n**What is a neural network?**\n\nA neural network",
+      "gen_time_s": 1.8354083094745874
+    },
+    {
+      "prompt": "Write a Python function that checks if a string is a palindrome.",
+      "output": "Write a Python function that checks if a string is a palindrome. A palindrome is a word that reads the same backward as forward. The function should return True if the string is a palindrome and False otherwise. The function should be case-insensitive and ignore spaces and punctuation.\n\nHere is a Python function that checks if a string is a palindrome, ignoring case, spaces, and punctuation:\n\n```python\nimport re\n\ndef is_palindrome(s):\n    # Remove non",
+      "gen_time_s": 1.9828444812446833
+    },
+    {
+      "prompt": "Describe the water cycle and its importance to the ecosystem.",
+      "output": "Describe the water cycle and its importance to the ecosystem.**  \n   *Answer:* The water cycle involves the evaporation of water from the earth\u2019s surface, condensation into clouds, and precipitation back to the surface. This cycle is crucial for maintaining the earth\u2019s climate, supporting plant and animal life, and providing fresh water for human use.\n\n4. **What is the difference between a plant and a non-plant organism?**  \n   *Answer:* Plants",
+      "gen_time_s": 1.827307565137744
+    },
+    {
+      "prompt": "What is the difference between a list and a tuple in Python?",
+      "output": "What is the difference between a list and a tuple in Python?**\n\n   **Answer**: A list is a mutable data structure, meaning its elements can be modified, added, or removed. A tuple, on the other hand, is immutable, meaning its elements cannot be changed once defined. Lists are defined using square brackets `[]`, while tuples use parentheses `()`.\n\n2. **Explain the concept of a generator in Python.**\n\n   **Answer**:",
+      "gen_time_s": 1.7409137859940529
+    },
+    {
+      "prompt": "Explain how transformers work in natural language processing.",
+      "output": "Explain how transformers work in natural language processing. What are the key components of a transformer model, and how do they contribute to the model's performance?\n\nTransformers are a type of neural network architecture that has become the foundation for many state-of-the-art models in natural language processing (NLP). They were introduced in the paper \"Attention is All You Need\" by Vaswani et al. in 2017. The key innovation of transformers",
+      "gen_time_s": 1.932162942364812
+    },
+    {
+      "prompt": "What are the SOLID principles in software engineering?",
+      "output": "What are the SOLID principles in software engineering?**\n\n   **Answer**: The SOLID principles are a set of five design principles that help developers create more maintainable, scalable, and robust software. They are:\n   - **S**: **Single Responsibility Principle** \u2013 A class should have only one reason to change.\n   - **O**: **Open/Closed Principle** \u2013 Software entities should be open for extension but closed for modification",
+      "gen_time_s": 1.6427262658253312
+    },
+    {
+      "prompt": "Write a SQL query to find the top 5 highest-paid employees.",
+      "output": "Write a SQL query to find the top 5 highest-paid employees. The query should return the employee's name and salary. The result should be sorted in descending order of salary. If two employees have the same salary, they should also be sorted by name in ascending order.\n\nHere is a SQL query that will find the top 5 highest-paid employees and return their name and salary, sorted in descending order of salary and then by name in ascending order if two employees",
+      "gen_time_s": 1.8263032920658588
+    }
+  ]
+}

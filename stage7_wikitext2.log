@@ -1,0 +1,47 @@
+nohup: ignoring input
+/workspace/blockwise-gptq-main/.venv/lib/python3.12/site-packages/huggingface_hub/constants.py:298: FutureWarning: The `HF_HUB_ENABLE_HF_TRANSFER` environment variable is deprecated as 'hf_transfer' is not used anymore. Please use `HF_XET_HIGH_PERFORMANCE` instead to enable high performance transfer with Xet. Visit https://huggingface.co/docs/huggingface_hub/package_reference/environment_variables#hfxethighperformance for more details.
+  warnings.warn(
+====================================================================
+Stage 7 — Save NVFP4 checkpoint
+====================================================================
+  Model path    : models/gpt-oss-20b-BF16-NVFP4-wikitext2-fixed
+  Output dir    : models/gpt-oss-20b-BF16-NVFP4-wikitext2-modelopt
+  Quant format  : nvfp4
+  Results JSON  : results/stage5_gpt-oss-20b-BF16_nvfp4_quantize.json
+  Block size    : 16
+  Scale sharing : enabled (parallel groups get shared weight_scale_2)
+
+Loading model on CPU …
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/411 [00:00<?, ?it/s]Loading weights: 100%|██████████| 411/411 [00:00<00:00, 6636.10it/s]
+  Loaded in 3.3 s  (20.91 B params)
+
+  Packing all 96 nn.Linear (excl. lm_head)
+
+Packing weights to NVFP4 …
+[Stage 7] Loaded 411 raw tensors from safetensors (1 shard(s))
+[Stage 7] Parallel scale sharing: 72 layers across 24 groups (shared weight_scale_2 per group)
+  [96/96] layers packed …
+[Stage 7] 96 layers packed (NVFP4), 1 layers kept BF16
+  Packing done in 79.9 s
+
+Saving safetensors shards …
+[Stage 7] Saved model-00001-of-00011.safetensors  (3.65 GB)
+[Stage 7] Saved model-00002-of-00011.safetensors  (3.49 GB)
+[Stage 7] Saved model-00003-of-00011.safetensors  (3.99 GB)
+[Stage 7] Saved model-00004-of-00011.safetensors  (3.49 GB)
+[Stage 7] Saved model-00005-of-00011.safetensors  (3.99 GB)
+[Stage 7] Saved model-00006-of-00011.safetensors  (3.49 GB)
+[Stage 7] Saved model-00007-of-00011.safetensors  (3.99 GB)
+[Stage 7] Saved model-00008-of-00011.safetensors  (3.49 GB)
+[Stage 7] Saved model-00009-of-00011.safetensors  (3.99 GB)
+[Stage 7] Saved model-00010-of-00011.safetensors  (3.49 GB)
+[Stage 7] Saved model-00011-of-00011.safetensors  (1.04 GB)
+[Stage 7] Shard index → model.safetensors.index.json
+  Saved in 20.6 s
+Saving tokenizer and support files …
+[Stage 7] config.json written  (quant_algo=W4A16_NVFP4)
+
+====================================================================
+Stage 7 complete — NVFP4 checkpoint at models/gpt-oss-20b-BF16-NVFP4-wikitext2-modelopt
+====================================================================

@@ -1,7 +1,5 @@
 models/
-results/
 hessian_cache/
-*.log
 __pycache__/
 *.pyc
 .venv/
