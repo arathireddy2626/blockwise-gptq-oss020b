@@ -1,0 +1,75 @@
+nohup: ignoring input
+====================================================================
+Stage 4 — Baseline Perplexity Evaluation
+====================================================================
+Model path : models/gpt-oss-20b-BF16
+Seq len    : 2048
+C4 tokens  : 131,072
+Output     : /workspace/blockwise-gptq-main/results/stage4_gpt-oss-20b-BF16_baseline.json
+
+Model shards: 9 × .safetensors
+
+Loading tokenizer...
+  Vocab size: 199,998
+
+Loading model 'gpt-oss-20b-BF16' (BF16, device_map=auto)...
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/9 [00:00<?, ?it/s]Loading checkpoint shards:  11%|█         | 1/9 [00:00<00:04,  1.69it/s]Loading checkpoint shards:  22%|██▏       | 2/9 [00:01<00:04,  1.66it/s]Loading checkpoint shards:  33%|███▎      | 3/9 [00:01<00:03,  1.65it/s]Loading checkpoint shards:  44%|████▍     | 4/9 [00:02<00:03,  1.66it/s]Loading checkpoint shards:  56%|█████▌    | 5/9 [00:03<00:02,  1.67it/s]Loading checkpoint shards:  67%|██████▋   | 6/9 [00:03<00:01,  1.71it/s]Loading checkpoint shards:  78%|███████▊  | 7/9 [00:04<00:01,  1.74it/s]Loading checkpoint shards:  89%|████████▉ | 8/9 [00:04<00:00,  1.73it/s]Loading checkpoint shards: 100%|██████████| 9/9 [00:05<00:00,  2.01it/s]Loading checkpoint shards: 100%|██████████| 9/9 [00:05<00:00,  1.79it/s]
+  Parameters : 20.91 B
+  Load time  : 5.8 s
+  GPU memory : 39.0 GB
+
+────────────────────────────────────────────────────────────────────
+WikiText-2 (test split, non-overlapping 2048-token windows)
+────────────────────────────────────────────────────────────────────
+  Loading WikiText-2 test split...
+Generating test split:   0%|          | 0/4358 [00:00<?, ? examples/s]Generating test split:  46%|████▌     | 2000/4358 [00:00<00:00, 13322.86 examples/s]Generating test split: 100%|██████████| 4358/4358 [00:00<00:00, 24547.82 examples/s]
+Generating train split:   0%|          | 0/36718 [00:00<?, ? examples/s]Generating train split: 100%|██████████| 36718/36718 [00:00<00:00, 453362.85 examples/s]
+Generating validation split:   0%|          | 0/3760 [00:00<?, ? examples/s]Generating validation split: 100%|██████████| 3760/3760 [00:00<00:00, 468623.39 examples/s]
+  Cached 4358 samples → /workspace/blockwise-gptq-main/results/stage4_gpt-oss-20b-BF16_wikitext2_samples.json
+  wikitext2  window   10/140  (  7.1%)  tokens=  20,480  ppl= 157.784  [   7.7s]
+  wikitext2  window   20/140  ( 14.3%)  tokens=  40,960  ppl= 189.186  [  14.5s]
+  wikitext2  window   30/140  ( 21.4%)  tokens=  61,440  ppl= 202.805  [  21.2s]
+  wikitext2  window   40/140  ( 28.6%)  tokens=  81,920  ppl= 188.862  [  28.0s]
+  wikitext2  window   50/140  ( 35.7%)  tokens= 102,400  ppl= 203.838  [  34.8s]
+  wikitext2  window   60/140  ( 42.9%)  tokens= 122,880  ppl= 191.166  [  41.5s]
+  wikitext2  window   70/140  ( 50.0%)  tokens= 143,360  ppl= 201.745  [  48.3s]
+  wikitext2  window   80/140  ( 57.1%)  tokens= 163,840  ppl= 197.120  [  55.1s]
+  wikitext2  window   90/140  ( 64.3%)  tokens= 184,320  ppl= 206.899  [  61.9s]
+  wikitext2  window  100/140  ( 71.4%)  tokens= 204,800  ppl= 216.124  [  68.6s]
+  wikitext2  window  110/140  ( 78.6%)  tokens= 225,280  ppl= 220.947  [  75.4s]
+  wikitext2  window  120/140  ( 85.7%)  tokens= 245,760  ppl= 221.526  [  82.2s]
+  wikitext2  window  130/140  ( 92.9%)  tokens= 266,240  ppl= 220.822  [  88.9s]
+  wikitext2  window  140/140  (100.0%)  tokens= 286,720  ppl= 226.793  [  95.7s]
+
+  WikiText-2 perplexity : 226.7927
+  Tokens evaluated      : 286,720  (140 windows)
+  Time                  : 95.7 s
+
+────────────────────────────────────────────────────────────────────
+C4 (validation, up to 131,072 tokens)
+────────────────────────────────────────────────────────────────────
+  Loading C4 validation (1024 samples, streaming)...
+  Fetched 1024 samples via streaming
+  Cached 1024 samples → /workspace/blockwise-gptq-main/results/stage4_gpt-oss-20b-BF16_c4_samples.json
+  c4           window   10/64  ( 15.6%)  tokens=  20,480  ppl=1139.283  [   6.8s]
+  c4           window   20/64  ( 31.2%)  tokens=  40,960  ppl= 920.042  [  13.5s]
+  c4           window   30/64  ( 46.9%)  tokens=  61,440  ppl= 796.944  [  20.3s]
+  c4           window   40/64  ( 62.5%)  tokens=  81,920  ppl= 843.875  [  27.1s]
+  c4           window   50/64  ( 78.1%)  tokens= 102,400  ppl= 721.002  [  33.8s]
+  c4           window   60/64  ( 93.8%)  tokens= 122,880  ppl= 712.170  [  40.6s]
+  c4           window   64/64  (100.0%)  tokens= 131,072  ppl= 708.935  [  43.3s]
+
+  C4 perplexity   : 708.9354
+  Tokens evaluated: 131,072  (64 windows)
+  Time            : 43.3 s
+
+====================================================================
+Stage 4 summary — Baseline perplexity
+====================================================================
+  WikiText-2 ppl : 226.7927
+  C4         ppl : 708.9354
+
+  Results saved to: /workspace/blockwise-gptq-main/results/stage4_gpt-oss-20b-BF16_baseline.json
+
+✓  Baseline recorded. Run Stage 5 to quantize the model.

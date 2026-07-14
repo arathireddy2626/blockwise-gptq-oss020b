@@ -1,0 +1,46 @@
+nohup: ignoring input
+====================================================================
+Stage 7 — Save NVFP4 checkpoint
+====================================================================
+  Model path    : models/gpt-oss-20b-BF16-NVFP4
+  Output dir    : models/gpt-oss-20b-BF16-NVFP4-modelopt
+  Quant format  : nvfp4
+  Results JSON  : results/stage5_gpt-oss-20b-BF16_nvfp4_quantize.json
+  Block size    : 16
+  Scale sharing : enabled (parallel groups get shared weight_scale_2)
+
+Loading model on CPU …
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/9 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 9/9 [00:00<00:00, 428.56it/s]
+The tokenizer you are loading from 'models/gpt-oss-20b-BF16-NVFP4' with an incorrect regex pattern: https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503/discussions/84#69121093e8b480e709447d5e. This will lead to incorrect tokenization. You should set the `fix_mistral_regex=True` flag when loading this tokenizer to fix this issue.
+  Loaded in 0.8 s  (20.91 B params)
+
+  Packing all 96 nn.Linear (excl. lm_head)
+
+Packing weights to NVFP4 …
+[Stage 7] Loaded 411 raw tensors from safetensors (9 shard(s))
+[Stage 7] Parallel scale sharing: 72 layers across 24 groups (shared weight_scale_2 per group)
+  [96/96] layers packed …
+[Stage 7] 96 layers packed (NVFP4), 1 layers kept BF16
+  Packing done in 62.3 s
+
+Saving safetensors shards …
+[Stage 7] Saved model-00001-of-00011.safetensors  (3.07 GB)
+[Stage 7] Saved model-00002-of-00011.safetensors  (3.99 GB)
+[Stage 7] Saved model-00003-of-00011.safetensors  (3.49 GB)
+[Stage 7] Saved model-00004-of-00011.safetensors  (3.99 GB)
+[Stage 7] Saved model-00005-of-00011.safetensors  (3.50 GB)
+[Stage 7] Saved model-00006-of-00011.safetensors  (3.99 GB)
+[Stage 7] Saved model-00007-of-00011.safetensors  (3.47 GB)
+[Stage 7] Saved model-00008-of-00011.safetensors  (3.99 GB)
+[Stage 7] Saved model-00009-of-00011.safetensors  (3.49 GB)
+[Stage 7] Saved model-00010-of-00011.safetensors  (3.59 GB)
+[Stage 7] Saved model-00011-of-00011.safetensors  (1.52 GB)
+[Stage 7] Shard index → model.safetensors.index.json
+  Saved in 18.5 s
+Saving tokenizer and support files …
+[Stage 7] config.json written  (quant_algo=W4A16_NVFP4)
+
+====================================================================
+Stage 7 complete — NVFP4 checkpoint at models/gpt-oss-20b-BF16-NVFP4-modelopt
+====================================================================

@@ -1,0 +1,84 @@
+nohup: ignoring input
+====================================================================
+Stage 6 — NVFP4 Perplexity Evaluation  [gpt-oss-20b-BF16-NVFP4]
+====================================================================
+Quantized model    : models/gpt-oss-20b-BF16-NVFP4
+BF16 stem          : gpt-oss-20b-BF16
+Baseline           : /workspace/blockwise-gptq-main/results/stage4_gpt-oss-20b-BF16_baseline.json
+WikiText-2 samples : /workspace/blockwise-gptq-main/results/stage4_gpt-oss-20b-BF16_wikitext2_samples.json
+C4 samples         : /workspace/blockwise-gptq-main/results/stage4_gpt-oss-20b-BF16_c4_samples.json
+Seq len            : 2048
+C4 tokens          : 131,072
+Skip WikiText-2    : False
+Output             : /workspace/blockwise-gptq-main/results/stage6_gpt-oss-20b-BF16-NVFP4_eval.json
+
+Baseline (Stage 4 BF16 — gpt-oss-20b-BF16):
+  WikiText-2 ppl : 226.7927
+  C4         ppl : 708.9354
+
+Loading cached WikiText-2 samples...
+  Loaded 4358 samples
+
+Loading cached C4 samples...
+  Loaded 1024 samples
+
+Loading tokenizer...
+The tokenizer you are loading from 'models/gpt-oss-20b-BF16-NVFP4' with an incorrect regex pattern: https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503/discussions/84#69121093e8b480e709447d5e. This will lead to incorrect tokenization. You should set the `fix_mistral_regex=True` flag when loading this tokenizer to fix this issue.
+  Vocab size   : 199,998
+  BOS token ID : 199998
+
+Loading quantized model 'gpt-oss-20b-BF16-NVFP4' (device_map=auto)...
+Loading checkpoint shards:   0%|          | 0/9 [00:00<?, ?it/s]Loading checkpoint shards:  11%|█         | 1/9 [00:00<00:04,  1.84it/s]Loading checkpoint shards:  22%|██▏       | 2/9 [00:01<00:03,  1.82it/s]Loading checkpoint shards:  33%|███▎      | 3/9 [00:01<00:03,  1.87it/s]Loading checkpoint shards:  44%|████▍     | 4/9 [00:02<00:02,  1.89it/s]Loading checkpoint shards:  56%|█████▌    | 5/9 [00:02<00:02,  1.88it/s]Loading checkpoint shards:  67%|██████▋   | 6/9 [00:03<00:01,  1.86it/s]Loading checkpoint shards:  78%|███████▊  | 7/9 [00:03<00:01,  1.86it/s]Loading checkpoint shards:  89%|████████▉ | 8/9 [00:04<00:00,  1.84it/s]Loading checkpoint shards: 100%|██████████| 9/9 [00:04<00:00,  2.12it/s]Loading checkpoint shards: 100%|██████████| 9/9 [00:04<00:00,  1.94it/s]
+  Parameters : 20.91 B
+  Load time  : 5.5 s
+  GPU memory : 77.9 GB allocated
+
+────────────────────────────────────────────────────────────────────
+WikiText-2 (4358 cached samples, non-overlapping windows)
+────────────────────────────────────────────────────────────────────
+  wikitext2  window   10/140  (  7.1%)  tokens=  20,480  ppl= 174.729  [  26.6s]
+  wikitext2  window   20/140  ( 14.3%)  tokens=  40,960  ppl= 198.964  [  52.6s]
+  wikitext2  window   30/140  ( 21.4%)  tokens=  61,440  ppl= 207.255  [  78.7s]
+  wikitext2  window   40/140  ( 28.6%)  tokens=  81,920  ppl= 196.136  [ 104.7s]
+  wikitext2  window   50/140  ( 35.7%)  tokens= 102,400  ppl= 210.399  [ 130.8s]
+  wikitext2  window   60/140  ( 42.9%)  tokens= 122,880  ppl= 200.263  [ 156.8s]
+  wikitext2  window   70/140  ( 50.0%)  tokens= 143,360  ppl= 211.614  [ 182.8s]
+  wikitext2  window   80/140  ( 57.1%)  tokens= 163,840  ppl= 208.747  [ 208.9s]
+  wikitext2  window   90/140  ( 64.3%)  tokens= 184,320  ppl= 216.896  [ 234.9s]
+  wikitext2  window  100/140  ( 71.4%)  tokens= 204,800  ppl= 226.890  [ 261.0s]
+  wikitext2  window  110/140  ( 78.6%)  tokens= 225,280  ppl= 230.430  [ 287.0s]
+  wikitext2  window  120/140  ( 85.7%)  tokens= 245,760  ppl= 232.840  [ 313.0s]
+  wikitext2  window  130/140  ( 92.9%)  tokens= 266,240  ppl= 233.333  [ 339.1s]
+  wikitext2  window  140/140  (100.0%)  tokens= 286,720  ppl= 240.197  [ 365.1s]
+
+  NVFP4 ppl : 240.1973
+  BF16  ppl : 226.7927
+  Δppl      : +13.4046  (WARN — above threshold)
+
+────────────────────────────────────────────────────────────────────
+C4 (1024 cached samples, up to 131,072 tokens)
+────────────────────────────────────────────────────────────────────
+  c4           window   10/64  ( 15.6%)  tokens=  20,480  ppl= 886.078  [  26.0s]
+  c4           window   20/64  ( 31.2%)  tokens=  40,960  ppl= 773.399  [  52.1s]
+  c4           window   30/64  ( 46.9%)  tokens=  61,440  ppl= 700.781  [  78.1s]
+  c4           window   40/64  ( 62.5%)  tokens=  81,920  ppl= 731.537  [ 104.1s]
+  c4           window   50/64  ( 78.1%)  tokens= 102,400  ppl= 640.802  [ 130.2s]
+  c4           window   60/64  ( 93.8%)  tokens= 122,880  ppl= 637.077  [ 156.2s]
+  c4           window   64/64  (100.0%)  tokens= 131,072  ppl= 633.438  [ 166.6s]
+
+  NVFP4 ppl : 633.4376
+  BF16  ppl : 708.9354
+  Δppl      : -75.4977  (OK)
+
+====================================================================
+Stage 6 Summary — gpt-oss-20b-BF16-NVFP4  (NVFP4 vs BF16)
+====================================================================
+  Dataset        BF16 ppl  NVFP4 ppl     Δppl  Status
+  ──────────── ────────── ────────── ────────  ────────────────────
+  WikiText-2     226.7927   240.1973 +13.4046  ⚠  ABOVE THRESHOLD
+  C4             708.9354   633.4376 -75.4977  ✓  OK
+
+  Results saved to: /workspace/blockwise-gptq-main/results/stage6_gpt-oss-20b-BF16-NVFP4_eval.json
+
+⚠  One or more Δppl values exceeded the warning threshold.
+   Consider: lower percdamp, larger nsamples, or blocksize tuning.
