@@ -1,0 +1,22 @@
+{
+  "stage": "4_baseline",
+  "model": "gpt-oss-20b-BF16",
+  "model_path": "models/gpt-oss-20b-BF16",
+  "dtype": "bfloat16",
+  "seq_len": 2048,
+  "timestamp": "2026-07-13T23:44:41.765949+00:00",
+  "wikitext2": {
+    "ppl": 226.792657,
+    "avg_nll": 5.424036,
+    "n_tokens": 286720,
+    "n_windows": 140,
+    "elapsed_s": 95.69
+  },
+  "c4": {
+    "ppl": 708.93536,
+    "avg_nll": 6.563764,
+    "n_tokens": 131072,
+    "n_windows": 64,
+    "elapsed_s": 43.3
+  }
+}
